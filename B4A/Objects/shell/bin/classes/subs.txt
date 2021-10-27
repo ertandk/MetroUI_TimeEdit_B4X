@@ -278,7 +278,7 @@ starter,service_taskremoved,0,0,22,24
 
 
 
-metroui_timeedit,base_resize,0,0,198,200
+metroui_timeedit,base_resize,0,0,203,205
 
 
 
@@ -286,11 +286,11 @@ metroui_timeedit,class_globals,0,0,6,38
 
 
 
-metroui_timeedit,dakika_textchanged,1,0,153,175
+metroui_timeedit,dakika_textchanged,0,1,168,185
 
 
 
-metroui_timeedit,designercreateview,0,1,93,131
+metroui_timeedit,designercreateview,0,1,93,136
 
 
 
@@ -298,11 +298,11 @@ metroui_timeedit,initialize,0,0,40,90
 
 
 
-metroui_timeedit,saat_textchanged,1,0,133,151
+metroui_timeedit,saat_textchanged,1,1,138,166
 
 
 
-metroui_timeedit,saniye_textchanged,1,0,177,196
+metroui_timeedit,saniye_textchanged,0,1,187,201
 
 
 

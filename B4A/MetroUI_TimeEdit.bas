@@ -134,22 +134,37 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	Saniye_Text.HintColor = TextColor
 	Saniye_Text.TextColor = TextColor
 	
+	IME.SetLengthFilter(Saat_Text, 2)
+	IME.SetLengthFilter(Dakika_Text, 2)
+	IME.SetLengthFilter(Saniye_Text, 2)
+	
+	
 End Sub
 
 Private Sub Saat_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
-		If New.Length > 2 Then
-			Dim pos As Int = Saat_Text.SelectionStart
-			Saat_Text.Text = Old
-			Saat_Text.SelectionStart= pos - 1
-		End If
 		
 		
-		If New.Length = 2 Then
-			Dakika_Text.RequestFocus
-		End If
 		
+		
+		
+		Log(Saat_Text.Text)
+		
+		Dim Saatex As Int = Saat_Text.Text
+		
+			If Saatex > 12 Then
+				
+			
+				Saat_Text.Hint = 0
+				Saat_Text.Text = ""
+				
+			Else if Saatex <= 12 Then
+				If New.Length = 2 Then
+					Dakika_Text.RequestFocus
+				End If
+			End If
+			
 		
 	Catch
 		Log(LastException)
@@ -159,11 +174,6 @@ End Sub
 Private Sub Dakika_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
-		If New.Length > 2 Then
-			Dim pos As Int = Saat_Text.SelectionStart
-			Dakika_Text.Text = Old
-			Dakika_Text.SelectionStart= pos
-		End If
 		
 		If New.Length = 2 And SaniyeVisibleCheck=True Then
 			Saniye_Text.RequestFocus
@@ -183,12 +193,7 @@ End Sub
 Private Sub Saniye_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
-		If New.Length > 2 Then
-			Dim pos As Int = Saat_Text.SelectionStart
-			Saniye_Text.Text = Old
-			Saniye_Text.SelectionStart= pos
-		End If
-		
+	
 		 If New.Length=0 Then
 				
 			Dakika_Text.RequestFocus

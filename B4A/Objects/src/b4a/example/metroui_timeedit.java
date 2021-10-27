@@ -140,7 +140,6 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "dakika_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "dakika_textchanged", new Object[] {_old,_new}));}
-int _pos = 0;
 RDebugUtils.currentLine=10027008;
  //BA.debugLineNum = 10027008;BA.debugLine="Private Sub Dakika_TextChanged (Old As String, New";
 RDebugUtils.currentLine=10027009;
@@ -148,42 +147,29 @@ RDebugUtils.currentLine=10027009;
 try {RDebugUtils.currentLine=10027010;
  //BA.debugLineNum = 10027010;BA.debugLine="Log(New.Length)";
 __c.LogImpl("210027010",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=10027011;
- //BA.debugLineNum = 10027011;BA.debugLine="If New.Length > 2 Then";
-if (_new.length()>2) { 
 RDebugUtils.currentLine=10027012;
- //BA.debugLineNum = 10027012;BA.debugLine="Dim pos As Int = Saat_Text.SelectionStart";
-_pos = __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getSelectionStart();
-RDebugUtils.currentLine=10027013;
- //BA.debugLineNum = 10027013;BA.debugLine="Dakika_Text.Text = Old";
-__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(_old));
-RDebugUtils.currentLine=10027014;
- //BA.debugLineNum = 10027014;BA.debugLine="Dakika_Text.SelectionStart= pos";
-__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setSelectionStart(_pos);
- };
-RDebugUtils.currentLine=10027017;
- //BA.debugLineNum = 10027017;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True Th";
+ //BA.debugLineNum = 10027012;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True Th";
 if (_new.length()==2 && __ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
-RDebugUtils.currentLine=10027018;
- //BA.debugLineNum = 10027018;BA.debugLine="Saniye_Text.RequestFocus";
+RDebugUtils.currentLine=10027013;
+ //BA.debugLineNum = 10027013;BA.debugLine="Saniye_Text.RequestFocus";
 __ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }else 
-{RDebugUtils.currentLine=10027020;
- //BA.debugLineNum = 10027020;BA.debugLine="Else if New.Length=0 Then";
+{RDebugUtils.currentLine=10027015;
+ //BA.debugLineNum = 10027015;BA.debugLine="Else if New.Length=0 Then";
 if (_new.length()==0) { 
-RDebugUtils.currentLine=10027022;
- //BA.debugLineNum = 10027022;BA.debugLine="Saat_Text.RequestFocus";
+RDebugUtils.currentLine=10027017;
+ //BA.debugLineNum = 10027017;BA.debugLine="Saat_Text.RequestFocus";
 __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }}
 ;
  } 
-       catch (Exception e14) {
-			ba.setLastException(e14);RDebugUtils.currentLine=10027028;
- //BA.debugLineNum = 10027028;BA.debugLine="Log(LastException)";
-__c.LogImpl("210027028",BA.ObjectToString(__c.LastException(ba)),0);
+       catch (Exception e9) {
+			ba.setLastException(e9);RDebugUtils.currentLine=10027023;
+ //BA.debugLineNum = 10027023;BA.debugLine="Log(LastException)";
+__c.LogImpl("210027023",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=10027030;
- //BA.debugLineNum = 10027030;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10027025;
+ //BA.debugLineNum = 10027025;BA.debugLine="End Sub";
 return "";
 }
 public String  _designercreateview(b4a.example.metroui_timeedit __ref,Object _base,anywheresoftware.b4a.objects.LabelWrapper _lbl,anywheresoftware.b4a.objects.collections.Map _props) throws Exception{
@@ -272,7 +258,16 @@ RDebugUtils.currentLine=8585252;
  //BA.debugLineNum = 8585252;BA.debugLine="Saniye_Text.TextColor = TextColor";
 __ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
 RDebugUtils.currentLine=8585254;
- //BA.debugLineNum = 8585254;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8585254;BA.debugLine="IME.SetLengthFilter(Saat_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585255;
+ //BA.debugLineNum = 8585255;BA.debugLine="IME.SetLengthFilter(Dakika_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585256;
+ //BA.debugLineNum = 8585256;BA.debugLine="IME.SetLengthFilter(Saniye_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585259;
+ //BA.debugLineNum = 8585259;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.example.metroui_timeedit __ref,anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
@@ -382,7 +377,7 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "saat_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "saat_textchanged", new Object[] {_old,_new}));}
-int _pos = 0;
+int _saatex = 0;
 RDebugUtils.currentLine=9633792;
  //BA.debugLineNum = 9633792;BA.debugLine="Private Sub Saat_TextChanged (Old As String, New A";
 RDebugUtils.currentLine=9633793;
@@ -390,34 +385,42 @@ RDebugUtils.currentLine=9633793;
 try {RDebugUtils.currentLine=9633794;
  //BA.debugLineNum = 9633794;BA.debugLine="Log(New.Length)";
 __c.LogImpl("29633794",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=9633795;
- //BA.debugLineNum = 9633795;BA.debugLine="If New.Length > 2 Then";
-if (_new.length()>2) { 
-RDebugUtils.currentLine=9633796;
- //BA.debugLineNum = 9633796;BA.debugLine="Dim pos As Int = Saat_Text.SelectionStart";
-_pos = __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getSelectionStart();
-RDebugUtils.currentLine=9633797;
- //BA.debugLineNum = 9633797;BA.debugLine="Saat_Text.Text = Old";
-__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(_old));
-RDebugUtils.currentLine=9633798;
- //BA.debugLineNum = 9633798;BA.debugLine="Saat_Text.SelectionStart= pos - 1";
-__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setSelectionStart((int) (_pos-1));
- };
+RDebugUtils.currentLine=9633800;
+ //BA.debugLineNum = 9633800;BA.debugLine="Log(Saat_Text.Text)";
+__c.LogImpl("29633800",__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText(),0);
 RDebugUtils.currentLine=9633802;
- //BA.debugLineNum = 9633802;BA.debugLine="If New.Length = 2 Then";
+ //BA.debugLineNum = 9633802;BA.debugLine="Dim Saatex As Int = Saat_Text.Text";
+_saatex = (int)(Double.parseDouble(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText()));
+RDebugUtils.currentLine=9633804;
+ //BA.debugLineNum = 9633804;BA.debugLine="If Saatex > 12 Then";
+if (_saatex>12) { 
+RDebugUtils.currentLine=9633807;
+ //BA.debugLineNum = 9633807;BA.debugLine="Saat_Text.Hint = 0";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHint(BA.NumberToString(0));
+RDebugUtils.currentLine=9633808;
+ //BA.debugLineNum = 9633808;BA.debugLine="Saat_Text.Text = \"\"";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(""));
+ }else 
+{RDebugUtils.currentLine=9633810;
+ //BA.debugLineNum = 9633810;BA.debugLine="Else if Saatex <= 12 Then";
+if (_saatex<=12) { 
+RDebugUtils.currentLine=9633811;
+ //BA.debugLineNum = 9633811;BA.debugLine="If New.Length = 2 Then";
 if (_new.length()==2) { 
-RDebugUtils.currentLine=9633803;
- //BA.debugLineNum = 9633803;BA.debugLine="Dakika_Text.RequestFocus";
+RDebugUtils.currentLine=9633812;
+ //BA.debugLineNum = 9633812;BA.debugLine="Dakika_Text.RequestFocus";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  };
+ }}
+;
  } 
-       catch (Exception e12) {
-			ba.setLastException(e12);RDebugUtils.currentLine=9633808;
- //BA.debugLineNum = 9633808;BA.debugLine="Log(LastException)";
-__c.LogImpl("29633808",BA.ObjectToString(__c.LastException(ba)),0);
+       catch (Exception e14) {
+			ba.setLastException(e14);RDebugUtils.currentLine=9633818;
+ //BA.debugLineNum = 9633818;BA.debugLine="Log(LastException)";
+__c.LogImpl("29633818",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=9633810;
- //BA.debugLineNum = 9633810;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9633820;
+ //BA.debugLineNum = 9633820;BA.debugLine="End Sub";
 return "";
 }
 public String  _saniye_textchanged(b4a.example.metroui_timeedit __ref,String _old,String _new) throws Exception{
@@ -425,7 +428,6 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "saniye_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "saniye_textchanged", new Object[] {_old,_new}));}
-int _pos = 0;
 RDebugUtils.currentLine=10289152;
  //BA.debugLineNum = 10289152;BA.debugLine="Private Sub Saniye_TextChanged (Old As String, New";
 RDebugUtils.currentLine=10289153;
@@ -433,34 +435,21 @@ RDebugUtils.currentLine=10289153;
 try {RDebugUtils.currentLine=10289154;
  //BA.debugLineNum = 10289154;BA.debugLine="Log(New.Length)";
 __c.LogImpl("210289154",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=10289155;
- //BA.debugLineNum = 10289155;BA.debugLine="If New.Length > 2 Then";
-if (_new.length()>2) { 
 RDebugUtils.currentLine=10289156;
- //BA.debugLineNum = 10289156;BA.debugLine="Dim pos As Int = Saat_Text.SelectionStart";
-_pos = __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getSelectionStart();
-RDebugUtils.currentLine=10289157;
- //BA.debugLineNum = 10289157;BA.debugLine="Saniye_Text.Text = Old";
-__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(_old));
-RDebugUtils.currentLine=10289158;
- //BA.debugLineNum = 10289158;BA.debugLine="Saniye_Text.SelectionStart= pos";
-__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setSelectionStart(_pos);
- };
-RDebugUtils.currentLine=10289161;
- //BA.debugLineNum = 10289161;BA.debugLine="If New.Length=0 Then";
+ //BA.debugLineNum = 10289156;BA.debugLine="If New.Length=0 Then";
 if (_new.length()==0) { 
-RDebugUtils.currentLine=10289163;
- //BA.debugLineNum = 10289163;BA.debugLine="Dakika_Text.RequestFocus";
+RDebugUtils.currentLine=10289158;
+ //BA.debugLineNum = 10289158;BA.debugLine="Dakika_Text.RequestFocus";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  };
  } 
-       catch (Exception e12) {
-			ba.setLastException(e12);RDebugUtils.currentLine=10289169;
- //BA.debugLineNum = 10289169;BA.debugLine="Log(LastException)";
-__c.LogImpl("210289169",BA.ObjectToString(__c.LastException(ba)),0);
+       catch (Exception e7) {
+			ba.setLastException(e7);RDebugUtils.currentLine=10289164;
+ //BA.debugLineNum = 10289164;BA.debugLine="Log(LastException)";
+__c.LogImpl("210289164",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=10289171;
- //BA.debugLineNum = 10289171;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10289166;
+ //BA.debugLineNum = 10289166;BA.debugLine="End Sub";
 return "";
 }
 }
