@@ -1,14 +1,15 @@
-﻿Build1=Default,b4i.example
+﻿Build1=Default,hds.timedit
 File1=MainPage.bil
 FileGroup1=Default Group
 Group=Default Group
 Library1=icore
 Library2=b4xpages
 Module1=|relative|..\B4XMainPage
+Module2=|relative|..\MetroUI_TimeEdit
 NumberOfFiles=1
 NumberOfLibraries=2
-NumberOfModules=1
-Version=6.5
+NumberOfModules=2
+Version=7.2
 @EndOfDesignText@
 'Code module
 #Region  Project Attributes 
@@ -20,6 +21,9 @@ Version=6.5
 	#Target: iPhone, iPad
 	#ATSEnabled: True
 	#MinVersion: 8
+	
+	 #CertificateFile: ios_distribution.cer
+    #ProvisionFile: provision.mobileprovision
 #End Region
 
 Sub Process_Globals

@@ -27,15 +27,17 @@ public static RemoteObject _dakika_text = RemoteObject.declareNull("anywheresoft
 public static RemoteObject _saniye_text = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _saatlabel = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _dakikalabel = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
+public static RemoteObject _zamandilimionikiyirmidort = RemoteObject.createImmutable(false);
 public static RemoteObject _saniyevisiblecheck = RemoteObject.createImmutable(false);
 public static RemoteObject _backgroundcolor = RemoteObject.createImmutable("");
 public static RemoteObject _textcolor = RemoteObject.createImmutable("");
+public static RemoteObject _clockcolor = RemoteObject.createImmutable("");
 public static RemoteObject _ime = RemoteObject.declareNull("anywheresoftware.b4a.objects.IME");
 public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.b4xpages _b4xpages = null;
 public static b4a.example.b4xcollections _b4xcollections = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
-		return new Object[] {"AnaPanel",_ref.getField(false, "_anapanel"),"BackgroundColor",_ref.getField(false, "_backgroundcolor"),"Dakika_Text",_ref.getField(false, "_dakika_text"),"Dakikab4x",_ref.getField(false, "_dakikab4x"),"DakikaLabel",_ref.getField(false, "_dakikalabel"),"Dakikalblbb4x",_ref.getField(false, "_dakikalblbb4x"),"IME",_ref.getField(false, "_ime"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"Saat_Text",_ref.getField(false, "_saat_text"),"Saatb4x",_ref.getField(false, "_saatb4x"),"SaatLabel",_ref.getField(false, "_saatlabel"),"SaatLblb4x",_ref.getField(false, "_saatlblb4x"),"Saniye_Text",_ref.getField(false, "_saniye_text"),"Saniyeb4x",_ref.getField(false, "_saniyeb4x"),"SaniyeVisibleCheck",_ref.getField(false, "_saniyevisiblecheck"),"Tag",_ref.getField(false, "_tag"),"TextColor",_ref.getField(false, "_textcolor"),"xui",_ref.getField(false, "_xui")};
+		return new Object[] {"AnaPanel",_ref.getField(false, "_anapanel"),"BackgroundColor",_ref.getField(false, "_backgroundcolor"),"ClockColor",_ref.getField(false, "_clockcolor"),"Dakika_Text",_ref.getField(false, "_dakika_text"),"Dakikab4x",_ref.getField(false, "_dakikab4x"),"DakikaLabel",_ref.getField(false, "_dakikalabel"),"Dakikalblbb4x",_ref.getField(false, "_dakikalblbb4x"),"IME",_ref.getField(false, "_ime"),"mBase",_ref.getField(false, "_mbase"),"mCallBack",_ref.getField(false, "_mcallback"),"mEventName",_ref.getField(false, "_meventname"),"Saat_Text",_ref.getField(false, "_saat_text"),"Saatb4x",_ref.getField(false, "_saatb4x"),"SaatLabel",_ref.getField(false, "_saatlabel"),"SaatLblb4x",_ref.getField(false, "_saatlblb4x"),"Saniye_Text",_ref.getField(false, "_saniye_text"),"Saniyeb4x",_ref.getField(false, "_saniyeb4x"),"SaniyeVisibleCheck",_ref.getField(false, "_saniyevisiblecheck"),"Tag",_ref.getField(false, "_tag"),"TextColor",_ref.getField(false, "_textcolor"),"xui",_ref.getField(false, "_xui"),"ZamanDilimiOnikiYirmiDort",_ref.getField(false, "_zamandilimionikiyirmidort")};
 }
 }

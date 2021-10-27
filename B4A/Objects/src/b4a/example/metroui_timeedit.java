@@ -47,9 +47,11 @@ public anywheresoftware.b4a.objects.EditTextWrapper _dakika_text = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _saniye_text = null;
 public anywheresoftware.b4a.objects.LabelWrapper _saatlabel = null;
 public anywheresoftware.b4a.objects.LabelWrapper _dakikalabel = null;
+public boolean _zamandilimionikiyirmidort = false;
 public boolean _saniyevisiblecheck = false;
 public String _backgroundcolor = "";
 public String _textcolor = "";
+public String _clockcolor = "";
 public anywheresoftware.b4a.objects.IME _ime = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
@@ -60,10 +62,10 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "base_resize", false))
 	 {return ((String) Debug.delegate(ba, "base_resize", new Object[] {_width,_height}));}
-RDebugUtils.currentLine=8650752;
- //BA.debugLineNum = 8650752;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
-RDebugUtils.currentLine=8650754;
- //BA.debugLineNum = 8650754;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8847360;
+ //BA.debugLineNum = 8847360;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
+RDebugUtils.currentLine=8847362;
+ //BA.debugLineNum = 8847362;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.example.metroui_timeedit __ref) throws Exception{
@@ -120,19 +122,25 @@ RDebugUtils.currentLine=8454165;
  //BA.debugLineNum = 8454165;BA.debugLine="Private DakikaLabel As Label";
 _dakikalabel = new anywheresoftware.b4a.objects.LabelWrapper();
 RDebugUtils.currentLine=8454167;
- //BA.debugLineNum = 8454167;BA.debugLine="Private SaniyeVisibleCheck As Boolean 'ignore";
-_saniyevisiblecheck = false;
+ //BA.debugLineNum = 8454167;BA.debugLine="Private ZamanDilimiOnikiYirmiDort As Boolean";
+_zamandilimionikiyirmidort = false;
 RDebugUtils.currentLine=8454168;
- //BA.debugLineNum = 8454168;BA.debugLine="Private BackgroundColor As String";
-_backgroundcolor = "";
+ //BA.debugLineNum = 8454168;BA.debugLine="Private SaniyeVisibleCheck As Boolean 'ignore";
+_saniyevisiblecheck = false;
 RDebugUtils.currentLine=8454169;
- //BA.debugLineNum = 8454169;BA.debugLine="Private TextColor As String";
+ //BA.debugLineNum = 8454169;BA.debugLine="Private BackgroundColor As String";
+_backgroundcolor = "";
+RDebugUtils.currentLine=8454170;
+ //BA.debugLineNum = 8454170;BA.debugLine="Private TextColor As String";
 _textcolor = "";
 RDebugUtils.currentLine=8454171;
- //BA.debugLineNum = 8454171;BA.debugLine="Private IME As IME";
+ //BA.debugLineNum = 8454171;BA.debugLine="Private ClockColor As String 'ignore";
+_clockcolor = "";
+RDebugUtils.currentLine=8454173;
+ //BA.debugLineNum = 8454173;BA.debugLine="Private IME As IME";
 _ime = new anywheresoftware.b4a.objects.IME();
-RDebugUtils.currentLine=8454176;
- //BA.debugLineNum = 8454176;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8454178;
+ //BA.debugLineNum = 8454178;BA.debugLine="End Sub";
 return "";
 }
 public String  _dakika_textchanged(b4a.example.metroui_timeedit __ref,String _old,String _new) throws Exception{
@@ -140,36 +148,36 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "dakika_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "dakika_textchanged", new Object[] {_old,_new}));}
-RDebugUtils.currentLine=10027008;
- //BA.debugLineNum = 10027008;BA.debugLine="Private Sub Dakika_TextChanged (Old As String, New";
-RDebugUtils.currentLine=10027009;
- //BA.debugLineNum = 10027009;BA.debugLine="Try";
-try {RDebugUtils.currentLine=10027010;
- //BA.debugLineNum = 10027010;BA.debugLine="Log(New.Length)";
-__c.LogImpl("210027010",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=10027012;
- //BA.debugLineNum = 10027012;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True Th";
+RDebugUtils.currentLine=8716288;
+ //BA.debugLineNum = 8716288;BA.debugLine="Private Sub Dakika_TextChanged (Old As String, New";
+RDebugUtils.currentLine=8716289;
+ //BA.debugLineNum = 8716289;BA.debugLine="Try";
+try {RDebugUtils.currentLine=8716290;
+ //BA.debugLineNum = 8716290;BA.debugLine="Log(New.Length)";
+__c.LogImpl("58716290",BA.NumberToString(_new.length()),0);
+RDebugUtils.currentLine=8716292;
+ //BA.debugLineNum = 8716292;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True Th";
 if (_new.length()==2 && __ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
-RDebugUtils.currentLine=10027013;
- //BA.debugLineNum = 10027013;BA.debugLine="Saniye_Text.RequestFocus";
+RDebugUtils.currentLine=8716293;
+ //BA.debugLineNum = 8716293;BA.debugLine="Saniye_Text.RequestFocus";
 __ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }else 
-{RDebugUtils.currentLine=10027015;
- //BA.debugLineNum = 10027015;BA.debugLine="Else if New.Length=0 Then";
+{RDebugUtils.currentLine=8716295;
+ //BA.debugLineNum = 8716295;BA.debugLine="Else if New.Length=0 Then";
 if (_new.length()==0) { 
-RDebugUtils.currentLine=10027017;
- //BA.debugLineNum = 10027017;BA.debugLine="Saat_Text.RequestFocus";
+RDebugUtils.currentLine=8716297;
+ //BA.debugLineNum = 8716297;BA.debugLine="Saat_Text.RequestFocus";
 __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }}
 ;
  } 
        catch (Exception e9) {
-			ba.setLastException(e9);RDebugUtils.currentLine=10027023;
- //BA.debugLineNum = 10027023;BA.debugLine="Log(LastException)";
-__c.LogImpl("210027023",BA.ObjectToString(__c.LastException(ba)),0);
+			ba.setLastException(e9);RDebugUtils.currentLine=8716303;
+ //BA.debugLineNum = 8716303;BA.debugLine="Log(LastException)";
+__c.LogImpl("58716303",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=10027025;
- //BA.debugLineNum = 10027025;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8716305;
+ //BA.debugLineNum = 8716305;BA.debugLine="End Sub";
 return "";
 }
 public String  _designercreateview(b4a.example.metroui_timeedit __ref,Object _base,anywheresoftware.b4a.objects.LabelWrapper _lbl,anywheresoftware.b4a.objects.collections.Map _props) throws Exception{
@@ -190,84 +198,96 @@ RDebugUtils.currentLine=8585219;
  //BA.debugLineNum = 8585219;BA.debugLine="mBase.Tag = Me";
 __ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setTag(this);
 RDebugUtils.currentLine=8585221;
- //BA.debugLineNum = 8585221;BA.debugLine="BackgroundColor=Props.get(\"BackgroundColor\")";
-__ref._backgroundcolor /*String*/  = BA.ObjectToString(_props.Get((Object)("BackgroundColor")));
+ //BA.debugLineNum = 8585221;BA.debugLine="ZamanDilimiOnikiYirmiDort=Props.Get(\"ZamanDilimiO";
+__ref._zamandilimionikiyirmidort /*boolean*/  = BA.ObjectToBoolean(_props.Get((Object)("ZamanDilimiOnikiYirmiDort")));
 RDebugUtils.currentLine=8585222;
- //BA.debugLineNum = 8585222;BA.debugLine="SaniyeVisibleCheck=Props.Get(\"SaniyeVisible\")";
-__ref._saniyevisiblecheck /*boolean*/  = BA.ObjectToBoolean(_props.Get((Object)("SaniyeVisible")));
+ //BA.debugLineNum = 8585222;BA.debugLine="BackgroundColor=Props.Get(\"BackgroundColor\")";
+__ref._backgroundcolor /*String*/  = BA.ObjectToString(_props.Get((Object)("BackgroundColor")));
 RDebugUtils.currentLine=8585223;
- //BA.debugLineNum = 8585223;BA.debugLine="TextColor=Props.Get(\"TextColor\")";
+ //BA.debugLineNum = 8585223;BA.debugLine="SaniyeVisibleCheck=Props.Get(\"SaniyeVisible\")";
+__ref._saniyevisiblecheck /*boolean*/  = BA.ObjectToBoolean(_props.Get((Object)("SaniyeVisible")));
+RDebugUtils.currentLine=8585224;
+ //BA.debugLineNum = 8585224;BA.debugLine="TextColor=Props.Get(\"TextColor\")";
 __ref._textcolor /*String*/  = BA.ObjectToString(_props.Get((Object)("TextColor")));
 RDebugUtils.currentLine=8585225;
- //BA.debugLineNum = 8585225;BA.debugLine="mBase.AddView(AnaPanel,0,0,mBase.Width, mBase.Hei";
-__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((android.view.View)(__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .getObject()),(int) (0),(int) (0),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+ //BA.debugLineNum = 8585225;BA.debugLine="ClockColor=Props.Get(\"ClockColor\")";
+__ref._clockcolor /*String*/  = BA.ObjectToString(_props.Get((Object)("ClockColor")));
 RDebugUtils.currentLine=8585227;
- //BA.debugLineNum = 8585227;BA.debugLine="Dim PanelArkaPlanOzellikleri As ColorDrawable";
-_panelarkaplanozellikleri = new anywheresoftware.b4a.objects.drawable.ColorDrawable();
-RDebugUtils.currentLine=8585228;
- //BA.debugLineNum = 8585228;BA.debugLine="PanelArkaPlanOzellikleri.Initialize2(BackgroundCo";
-_panelarkaplanozellikleri.Initialize2((int)(Double.parseDouble(__ref._backgroundcolor /*String*/ )),(int) (0),(int) (0),(int)(Double.parseDouble(__ref._backgroundcolor /*String*/ )));
+ //BA.debugLineNum = 8585227;BA.debugLine="mBase.AddView(AnaPanel,0,0,mBase.Width, mBase.Hei";
+__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((android.view.View)(__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .getObject()),(int) (0),(int) (0),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
 RDebugUtils.currentLine=8585229;
- //BA.debugLineNum = 8585229;BA.debugLine="AnaPanel.Background=PanelArkaPlanOzellikleri";
+ //BA.debugLineNum = 8585229;BA.debugLine="Dim PanelArkaPlanOzellikleri As ColorDrawable";
+_panelarkaplanozellikleri = new anywheresoftware.b4a.objects.drawable.ColorDrawable();
+RDebugUtils.currentLine=8585230;
+ //BA.debugLineNum = 8585230;BA.debugLine="PanelArkaPlanOzellikleri.Initialize2(BackgroundCo";
+_panelarkaplanozellikleri.Initialize2((int)(Double.parseDouble(__ref._backgroundcolor /*String*/ )),(int) (0),(int) (0),(int)(Double.parseDouble(__ref._backgroundcolor /*String*/ )));
+RDebugUtils.currentLine=8585231;
+ //BA.debugLineNum = 8585231;BA.debugLine="AnaPanel.Background=PanelArkaPlanOzellikleri";
 __ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .setBackground((android.graphics.drawable.Drawable)(_panelarkaplanozellikleri.getObject()));
-RDebugUtils.currentLine=8585233;
- //BA.debugLineNum = 8585233;BA.debugLine="If SaniyeVisibleCheck=True Then";
-if (__ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
-RDebugUtils.currentLine=8585234;
- //BA.debugLineNum = 8585234;BA.debugLine="AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/3,m";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),__c.PerXToCurrent((float) (0),ba),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
 RDebugUtils.currentLine=8585235;
- //BA.debugLineNum = 8585235;BA.debugLine="AnaPanel.AddView(SaatLabel,Saat_Text.Width - 2di";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saatlabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (2))),(int) (0),__c.DipToCurrent((int) (5)),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+ //BA.debugLineNum = 8585235;BA.debugLine="If SaniyeVisibleCheck=True Then";
+if (__ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
 RDebugUtils.currentLine=8585236;
- //BA.debugLineNum = 8585236;BA.debugLine="AnaPanel.AddView(Dakika_Text,mBase.Width/3,0,mBa";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+ //BA.debugLineNum = 8585236;BA.debugLine="AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/3,m";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),__c.PerXToCurrent((float) (0),ba),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
 RDebugUtils.currentLine=8585237;
- //BA.debugLineNum = 8585237;BA.debugLine="AnaPanel.AddView(DakikaLabel,Dakika_Text.Left +";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._dakikalabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getLeft()+__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (2))),(int) (0),__c.DipToCurrent((int) (5)),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+ //BA.debugLineNum = 8585237;BA.debugLine="AnaPanel.AddView(SaatLabel,Saat_Text.Width - 3di";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saatlabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (3))),(int) (0),__c.DipToCurrent((int) (5)),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-__c.DipToCurrent((int) (3))));
 RDebugUtils.currentLine=8585238;
- //BA.debugLineNum = 8585238;BA.debugLine="AnaPanel.AddView(Saniye_Text,Dakika_Text.Left+Da";
+ //BA.debugLineNum = 8585238;BA.debugLine="AnaPanel.AddView(Dakika_Text,mBase.Width/3,0,mBa";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+RDebugUtils.currentLine=8585239;
+ //BA.debugLineNum = 8585239;BA.debugLine="AnaPanel.AddView(DakikaLabel,Dakika_Text.Left +";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._dakikalabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getLeft()+__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (3))),(int) (0),__c.DipToCurrent((int) (5)),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-__c.DipToCurrent((int) (3))));
+RDebugUtils.currentLine=8585240;
+ //BA.debugLineNum = 8585240;BA.debugLine="AnaPanel.AddView(Saniye_Text,Dakika_Text.Left+Da";
 __ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getLeft()+__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)3),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
  }else {
-RDebugUtils.currentLine=8585240;
- //BA.debugLineNum = 8585240;BA.debugLine="AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/2,m";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),__c.PerXToCurrent((float) (0),ba),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)2),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=8585241;
- //BA.debugLineNum = 8585241;BA.debugLine="AnaPanel.AddView(SaatLabel,Saat_Text.Width - 2di";
-__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saatlabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (2))),(int) (0),__c.DipToCurrent((int) (5)),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-__c.DipToCurrent((int) (3))));
 RDebugUtils.currentLine=8585242;
- //BA.debugLineNum = 8585242;BA.debugLine="AnaPanel.AddView(Dakika_Text,mBase.Width/2,0,mBa";
+ //BA.debugLineNum = 8585242;BA.debugLine="AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/2,m";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),__c.PerXToCurrent((float) (0),ba),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)2),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
+RDebugUtils.currentLine=8585243;
+ //BA.debugLineNum = 8585243;BA.debugLine="AnaPanel.AddView(SaatLabel,Saat_Text.Width - 2di";
+__ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._saatlabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .getObject()),(int) (__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getWidth()-__c.DipToCurrent((int) (2))),(int) (0),__c.DipToCurrent((int) (5)),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()-__c.DipToCurrent((int) (3))));
+RDebugUtils.currentLine=8585244;
+ //BA.debugLineNum = 8585244;BA.debugLine="AnaPanel.AddView(Dakika_Text,mBase.Width/2,0,mBa";
 __ref._anapanel /*anywheresoftware.b4a.objects.PanelWrapper*/ .AddView((android.view.View)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)2),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)2),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
  };
-RDebugUtils.currentLine=8585245;
- //BA.debugLineNum = 8585245;BA.debugLine="Saat_Text.HintColor = TextColor";
+RDebugUtils.currentLine=8585247;
+ //BA.debugLineNum = 8585247;BA.debugLine="Saat_Text.HintColor = TextColor";
 __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHintColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
-RDebugUtils.currentLine=8585246;
- //BA.debugLineNum = 8585246;BA.debugLine="Saat_Text.TextColor = TextColor";
-__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
 RDebugUtils.currentLine=8585248;
- //BA.debugLineNum = 8585248;BA.debugLine="Dakika_Text.HintColor = TextColor";
+ //BA.debugLineNum = 8585248;BA.debugLine="Saat_Text.TextColor = TextColor";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
+RDebugUtils.currentLine=8585250;
+ //BA.debugLineNum = 8585250;BA.debugLine="Dakika_Text.HintColor = TextColor";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHintColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
-RDebugUtils.currentLine=8585249;
- //BA.debugLineNum = 8585249;BA.debugLine="Dakika_Text.TextColor = TextColor";
-__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
 RDebugUtils.currentLine=8585251;
- //BA.debugLineNum = 8585251;BA.debugLine="Saniye_Text.HintColor = TextColor";
+ //BA.debugLineNum = 8585251;BA.debugLine="Dakika_Text.TextColor = TextColor";
+__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
+RDebugUtils.currentLine=8585253;
+ //BA.debugLineNum = 8585253;BA.debugLine="Saniye_Text.HintColor = TextColor";
 __ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHintColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
-RDebugUtils.currentLine=8585252;
- //BA.debugLineNum = 8585252;BA.debugLine="Saniye_Text.TextColor = TextColor";
-__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
 RDebugUtils.currentLine=8585254;
- //BA.debugLineNum = 8585254;BA.debugLine="IME.SetLengthFilter(Saat_Text, 2)";
-__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
-RDebugUtils.currentLine=8585255;
- //BA.debugLineNum = 8585255;BA.debugLine="IME.SetLengthFilter(Dakika_Text, 2)";
-__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+ //BA.debugLineNum = 8585254;BA.debugLine="Saniye_Text.TextColor = TextColor";
+__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._textcolor /*String*/ )));
 RDebugUtils.currentLine=8585256;
- //BA.debugLineNum = 8585256;BA.debugLine="IME.SetLengthFilter(Saniye_Text, 2)";
-__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+ //BA.debugLineNum = 8585256;BA.debugLine="SaatLabel.TextColor= ClockColor";
+__ref._saatlabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._clockcolor /*String*/ )));
+RDebugUtils.currentLine=8585257;
+ //BA.debugLineNum = 8585257;BA.debugLine="DakikaLabel.TextColor= ClockColor";
+__ref._dakikalabel /*anywheresoftware.b4a.objects.LabelWrapper*/ .setTextColor((int)(Double.parseDouble(__ref._clockcolor /*String*/ )));
 RDebugUtils.currentLine=8585259;
- //BA.debugLineNum = 8585259;BA.debugLine="End Sub";
+ //BA.debugLineNum = 8585259;BA.debugLine="IME.SetLengthFilter(Saat_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585260;
+ //BA.debugLineNum = 8585260;BA.debugLine="IME.SetLengthFilter(Dakika_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585261;
+ //BA.debugLineNum = 8585261;BA.debugLine="IME.SetLengthFilter(Saniye_Text, 2)";
+__ref._ime /*anywheresoftware.b4a.objects.IME*/ .SetLengthFilter((android.widget.EditText)(__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getObject()),(int) (2));
+RDebugUtils.currentLine=8585264;
+ //BA.debugLineNum = 8585264;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.example.metroui_timeedit __ref,anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
@@ -378,49 +398,80 @@ RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "saat_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "saat_textchanged", new Object[] {_old,_new}));}
 int _saatex = 0;
-RDebugUtils.currentLine=9633792;
- //BA.debugLineNum = 9633792;BA.debugLine="Private Sub Saat_TextChanged (Old As String, New A";
-RDebugUtils.currentLine=9633793;
- //BA.debugLineNum = 9633793;BA.debugLine="Try";
-try {RDebugUtils.currentLine=9633794;
- //BA.debugLineNum = 9633794;BA.debugLine="Log(New.Length)";
-__c.LogImpl("29633794",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=9633800;
- //BA.debugLineNum = 9633800;BA.debugLine="Log(Saat_Text.Text)";
-__c.LogImpl("29633800",__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText(),0);
-RDebugUtils.currentLine=9633802;
- //BA.debugLineNum = 9633802;BA.debugLine="Dim Saatex As Int = Saat_Text.Text";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Private Sub Saat_TextChanged (Old As String, New A";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Try";
+try {RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="Log(New.Length)";
+__c.LogImpl("58650754",BA.NumberToString(_new.length()),0);
+RDebugUtils.currentLine=8650760;
+ //BA.debugLineNum = 8650760;BA.debugLine="Log(Saat_Text.Text)";
+__c.LogImpl("58650760",__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText(),0);
+RDebugUtils.currentLine=8650762;
+ //BA.debugLineNum = 8650762;BA.debugLine="Dim Saatex As Int = Saat_Text.Text";
 _saatex = (int)(Double.parseDouble(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText()));
-RDebugUtils.currentLine=9633804;
- //BA.debugLineNum = 9633804;BA.debugLine="If Saatex > 12 Then";
+RDebugUtils.currentLine=8650764;
+ //BA.debugLineNum = 8650764;BA.debugLine="If ZamanDilimiOnikiYirmiDort = False Then";
+if (__ref._zamandilimionikiyirmidort /*boolean*/ ==__c.False) { 
+RDebugUtils.currentLine=8650766;
+ //BA.debugLineNum = 8650766;BA.debugLine="If Saatex > 12 Then";
 if (_saatex>12) { 
-RDebugUtils.currentLine=9633807;
- //BA.debugLineNum = 9633807;BA.debugLine="Saat_Text.Hint = 0";
-__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHint(BA.NumberToString(0));
-RDebugUtils.currentLine=9633808;
- //BA.debugLineNum = 9633808;BA.debugLine="Saat_Text.Text = \"\"";
+RDebugUtils.currentLine=8650768;
+ //BA.debugLineNum = 8650768;BA.debugLine="Saat_Text.Hint = \"00\"";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHint("00");
+RDebugUtils.currentLine=8650769;
+ //BA.debugLineNum = 8650769;BA.debugLine="Saat_Text.Text = \"\"";
 __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(""));
  }else 
-{RDebugUtils.currentLine=9633810;
- //BA.debugLineNum = 9633810;BA.debugLine="Else if Saatex <= 12 Then";
+{RDebugUtils.currentLine=8650771;
+ //BA.debugLineNum = 8650771;BA.debugLine="Else if Saatex <= 12 Then";
 if (_saatex<=12) { 
-RDebugUtils.currentLine=9633811;
- //BA.debugLineNum = 9633811;BA.debugLine="If New.Length = 2 Then";
+RDebugUtils.currentLine=8650772;
+ //BA.debugLineNum = 8650772;BA.debugLine="If New.Length = 2 Then";
 if (_new.length()==2) { 
-RDebugUtils.currentLine=9633812;
- //BA.debugLineNum = 9633812;BA.debugLine="Dakika_Text.RequestFocus";
+RDebugUtils.currentLine=8650773;
+ //BA.debugLineNum = 8650773;BA.debugLine="Dakika_Text.RequestFocus";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  };
  }}
 ;
- } 
-       catch (Exception e14) {
-			ba.setLastException(e14);RDebugUtils.currentLine=9633818;
- //BA.debugLineNum = 9633818;BA.debugLine="Log(LastException)";
-__c.LogImpl("29633818",BA.ObjectToString(__c.LastException(ba)),0);
+ }else 
+{RDebugUtils.currentLine=8650777;
+ //BA.debugLineNum = 8650777;BA.debugLine="Else if ZamanDilimiOnikiYirmiDort = True Then";
+if (__ref._zamandilimionikiyirmidort /*boolean*/ ==__c.True) { 
+RDebugUtils.currentLine=8650779;
+ //BA.debugLineNum = 8650779;BA.debugLine="If Saatex > 24 Then";
+if (_saatex>24) { 
+RDebugUtils.currentLine=8650781;
+ //BA.debugLineNum = 8650781;BA.debugLine="Saat_Text.Hint = \"00\"";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHint("00");
+RDebugUtils.currentLine=8650782;
+ //BA.debugLineNum = 8650782;BA.debugLine="Saat_Text.Text = \"\"";
+__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(""));
+ }else 
+{RDebugUtils.currentLine=8650784;
+ //BA.debugLineNum = 8650784;BA.debugLine="Else if Saatex <= 24 Then";
+if (_saatex<=24) { 
+RDebugUtils.currentLine=8650785;
+ //BA.debugLineNum = 8650785;BA.debugLine="If New.Length = 2 Then";
+if (_new.length()==2) { 
+RDebugUtils.currentLine=8650786;
+ //BA.debugLineNum = 8650786;BA.debugLine="Dakika_Text.RequestFocus";
+__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  };
-RDebugUtils.currentLine=9633820;
- //BA.debugLineNum = 9633820;BA.debugLine="End Sub";
+ }}
+;
+ }}
+;
+ } 
+       catch (Exception e25) {
+			ba.setLastException(e25);RDebugUtils.currentLine=8650793;
+ //BA.debugLineNum = 8650793;BA.debugLine="Log(LastException)";
+__c.LogImpl("58650793",BA.ObjectToString(__c.LastException(ba)),0);
+ };
+RDebugUtils.currentLine=8650795;
+ //BA.debugLineNum = 8650795;BA.debugLine="End Sub";
 return "";
 }
 public String  _saniye_textchanged(b4a.example.metroui_timeedit __ref,String _old,String _new) throws Exception{
@@ -428,28 +479,28 @@ __ref = this;
 RDebugUtils.currentModule="metroui_timeedit";
 if (Debug.shouldDelegate(ba, "saniye_textchanged", false))
 	 {return ((String) Debug.delegate(ba, "saniye_textchanged", new Object[] {_old,_new}));}
-RDebugUtils.currentLine=10289152;
- //BA.debugLineNum = 10289152;BA.debugLine="Private Sub Saniye_TextChanged (Old As String, New";
-RDebugUtils.currentLine=10289153;
- //BA.debugLineNum = 10289153;BA.debugLine="Try";
-try {RDebugUtils.currentLine=10289154;
- //BA.debugLineNum = 10289154;BA.debugLine="Log(New.Length)";
-__c.LogImpl("210289154",BA.NumberToString(_new.length()),0);
-RDebugUtils.currentLine=10289156;
- //BA.debugLineNum = 10289156;BA.debugLine="If New.Length=0 Then";
+RDebugUtils.currentLine=8781824;
+ //BA.debugLineNum = 8781824;BA.debugLine="Private Sub Saniye_TextChanged (Old As String, New";
+RDebugUtils.currentLine=8781825;
+ //BA.debugLineNum = 8781825;BA.debugLine="Try";
+try {RDebugUtils.currentLine=8781826;
+ //BA.debugLineNum = 8781826;BA.debugLine="Log(New.Length)";
+__c.LogImpl("58781826",BA.NumberToString(_new.length()),0);
+RDebugUtils.currentLine=8781828;
+ //BA.debugLineNum = 8781828;BA.debugLine="If New.Length=0 Then";
 if (_new.length()==0) { 
-RDebugUtils.currentLine=10289158;
- //BA.debugLineNum = 10289158;BA.debugLine="Dakika_Text.RequestFocus";
+RDebugUtils.currentLine=8781830;
+ //BA.debugLineNum = 8781830;BA.debugLine="Dakika_Text.RequestFocus";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  };
  } 
        catch (Exception e7) {
-			ba.setLastException(e7);RDebugUtils.currentLine=10289164;
- //BA.debugLineNum = 10289164;BA.debugLine="Log(LastException)";
-__c.LogImpl("210289164",BA.ObjectToString(__c.LastException(ba)),0);
+			ba.setLastException(e7);RDebugUtils.currentLine=8781836;
+ //BA.debugLineNum = 8781836;BA.debugLine="Log(LastException)";
+__c.LogImpl("58781836",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=10289166;
- //BA.debugLineNum = 10289166;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8781838;
+ //BA.debugLineNum = 8781838;BA.debugLine="End Sub";
 return "";
 }
 }
