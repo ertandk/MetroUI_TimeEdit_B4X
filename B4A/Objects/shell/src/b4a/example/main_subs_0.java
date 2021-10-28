@@ -64,7 +64,7 @@ Debug.locals.put("KeyCode", _keycode);
 Debug.ShouldStop(64);
  BA.debugLineNum = 40;BA.debugLine="Return B4XPages.Delegate.Activity_KeyPress(KeyCod";
 Debug.ShouldStop(128);
-if (true) return main.mostCurrent._b4xpages._delegate /*RemoteObject*/ .runClassMethod (b4a.example.b4xpagesdelegator.class, "_activity_keypress" /*RemoteObject*/ ,(Object)(_keycode));
+Debug.CheckDeviceExceptions();if (true) return main.mostCurrent._b4xpages._delegate /*RemoteObject*/ .runClassMethod (b4a.example.b4xpagesdelegator.class, "_activity_keypress" /*RemoteObject*/ ,(Object)(_keycode));
  BA.debugLineNum = 41;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
 return RemoteObject.createImmutable(false);

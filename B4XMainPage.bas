@@ -5,7 +5,7 @@ Type=Class
 Version=9.85
 @EndOfDesignText@
 #Region Shared Files
-'#CustomBuildAction: folders ready, %WINDIR%\System32\Robocopy.exe,"..\..\Shared Files" "..\Files"
+#CustomBuildAction: folders ready, %WINDIR%\System32\Robocopy.exe,"..\..\Shared Files" "..\Files"
 'Ctrl + click to sync files: ide://run?file=%WINDIR%\System32\Robocopy.exe&args=..\..\Shared+Files&args=..\Files&FilesSync=True
 #End Region
 
@@ -29,10 +29,11 @@ Private Sub B4XPage_Created (Root1 As B4XView)
 '	MetroUI_TimeEdit1.Saat.Text="23"
 	
 	
+	
 End Sub
 
 'You can see the list of page related events in the B4XPagesManager object. The event name is B4XPage.
 
 Private Sub Button1_Click
-	xui.MsgboxAsync("Hello world!", "B4X")
+	Log(MetroUI_TimeEdit1.Time(False))
 End Sub

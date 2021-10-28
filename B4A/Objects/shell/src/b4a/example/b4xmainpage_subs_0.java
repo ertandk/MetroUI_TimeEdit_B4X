@@ -19,8 +19,8 @@ __ref.setField ("_root" /*RemoteObject*/ ,_root1);
  BA.debugLineNum = 21;BA.debugLine="Root.LoadLayout(\"MainPage\")";
 Debug.ShouldStop(1048576);
 __ref.getField(false,"_root" /*RemoteObject*/ ).runVoidMethodAndSync ("LoadLayout",(Object)(RemoteObject.createImmutable("MainPage")),__ref.getField(false, "ba"));
- BA.debugLineNum = 26;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 27;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -31,15 +31,15 @@ finally {
 		}}
 public static RemoteObject  _button1_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Button1_Click (b4xmainpage) ","b4xmainpage",1,__ref.getField(false, "ba"),__ref,30);
+		Debug.PushSubsStack("Button1_Click (b4xmainpage) ","b4xmainpage",1,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("button1_click")) { return __ref.runUserSub(false, "b4xmainpage","button1_click", __ref);}
- BA.debugLineNum = 30;BA.debugLine="Private Sub Button1_Click";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 31;BA.debugLine="xui.MsgboxAsync(\"Hello world!\", \"B4X\")";
+ BA.debugLineNum = 31;BA.debugLine="Private Sub Button1_Click";
 Debug.ShouldStop(1073741824);
-__ref.getField(false,"_xui" /*RemoteObject*/ ).runVoidMethod ("MsgboxAsync",__ref.getField(false, "ba"),(Object)(BA.ObjectToCharSequence("Hello world!")),(Object)(BA.ObjectToCharSequence(RemoteObject.createImmutable("B4X"))));
- BA.debugLineNum = 32;BA.debugLine="End Sub";
+ BA.debugLineNum = 32;BA.debugLine="Log(MetroUI_TimeEdit1.Time(False))";
 Debug.ShouldStop(-2147483648);
+b4xmainpage.__c.runVoidMethod ("LogImpl","1786433",__ref.getField(false,"_metroui_timeedit1" /*RemoteObject*/ ).runClassMethod (b4a.example.metroui_timeedit.class, "_time" /*RemoteObject*/ ,(Object)(b4xmainpage.__c.getField(true,"False"))),0);
+ BA.debugLineNum = 33;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

@@ -51,8 +51,8 @@ __ref._root /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = _root1;
 RDebugUtils.currentLine=720898;
  //BA.debugLineNum = 720898;BA.debugLine="Root.LoadLayout(\"MainPage\")";
 __ref._root /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .LoadLayout("MainPage",ba);
-RDebugUtils.currentLine=720903;
- //BA.debugLineNum = 720903;BA.debugLine="End Sub";
+RDebugUtils.currentLine=720904;
+ //BA.debugLineNum = 720904;BA.debugLine="End Sub";
 return "";
 }
 public String  _button1_click(b4a.example.b4xmainpage __ref) throws Exception{
@@ -63,8 +63,8 @@ if (Debug.shouldDelegate(ba, "button1_click", false))
 RDebugUtils.currentLine=786432;
  //BA.debugLineNum = 786432;BA.debugLine="Private Sub Button1_Click";
 RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="xui.MsgboxAsync(\"Hello world!\", \"B4X\")";
-__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .MsgboxAsync(ba,BA.ObjectToCharSequence("Hello world!"),BA.ObjectToCharSequence("B4X"));
+ //BA.debugLineNum = 786433;BA.debugLine="Log(MetroUI_TimeEdit1.Time(False))";
+__c.LogImpl("1786433",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null,__c.False),0);
 RDebugUtils.currentLine=786434;
  //BA.debugLineNum = 786434;BA.debugLine="End Sub";
 return "";

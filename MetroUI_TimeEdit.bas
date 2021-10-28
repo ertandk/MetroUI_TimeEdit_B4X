@@ -18,7 +18,7 @@ Sub Class_Globals
 	Public Tag As Object
 	
 	
-	Private AnaPanel As B4XView
+	Private AnaPanel As Panel
 	
 	Private Saatb4x As B4XView  'ignore
 	Private SaatLblb4x As B4XView'ignore
@@ -55,7 +55,7 @@ Public Sub Initialize (Callback As Object, EventName As String)
 	mCallBack = Callback
 	
 
-'	AnaPanel.Initialize("AnaPanel")
+	AnaPanel.Initialize("AnaPanel")
 	
 	#IF B4A
 	IME.Initialize("")
@@ -174,7 +174,7 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	
 	#else b4i
 	
-	
+	MyPanel.SetBorder(BorderWidth,BorderColor,ArkaPlanRadius)
 	
 	
 	#End If
@@ -286,16 +286,22 @@ Private Sub Dakika_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
 		
-		If New.Length = 2 And SaniyeVisibleCheck=True Then
-			Saniye_Text.RequestFocus
-			
-		Else if New.Length=0 Then
-				
-			Saat_Text.RequestFocus
-			
+		Dim Dakikaex As Int = Dakika_Text.Text
+		
+		If Dakikaex > 59 Then
+			#if b4a 
+			Dakika_Text.Hint = "00"
+			#else
+			Dakika_Text.HintText = "00"
+			#End If
+			Dakika_Text.Text = ""
+		else if Dakikaex <= 59 Then
+			If New.Length = 2 And SaniyeVisibleCheck=True Then
+				Saniye_Text.RequestFocus
+			Else If New.Length=0 Then
+				Saat_Text.RequestFocus
+			End If
 		End If
-		
-		
 	Catch
 		Log(LastException)
 	End Try
@@ -304,17 +310,41 @@ End Sub
 Private Sub Saniye_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
-	
-		 If New.Length=0 Then
-				
-			Dakika_Text.RequestFocus
-			
+		
+		Dim Saniyeex As Int = Saniye_Text.Text
+		
+		If Saniyeex > 59 Then
+			#if b4a 
+			Saniye_Text.Hint = "00"
+			#else
+			Saniye_Text.HintText = "00"
+			#End If
+			Saniye_Text.Text = ""
+		Else If Saniye_Text.Text <= 59 Then
+			If New.Length=0 Then
+				Dakika_Text.RequestFocus
+			End If
 		End If
-		
-		
 	Catch
 		Log(LastException)
 	End Try
+End Sub
+
+Public Sub Time(HourMiniute As Boolean)
+	If HourMiniute = True Then
+	
+		Dim SaatveDakika As String = Saat_Text.Text & ":" & Dakika_Text.Text
+	
+		Return SaatveDakika
+		
+		Else
+			
+		Dim SaatveDakikaveSaniye As String = Saat_Text.Text & ":" & Dakika_Text.Text & ":" & Saniye_Text.Text
+	
+		Return SaatveDakikaveSaniye
+	
+	End If
+	
 End Sub
 
 Private Sub Base_Resize (Width As Double, Height As Double)
