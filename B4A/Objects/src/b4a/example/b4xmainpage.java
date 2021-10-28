@@ -64,7 +64,7 @@ RDebugUtils.currentLine=786432;
  //BA.debugLineNum = 786432;BA.debugLine="Private Sub Button1_Click";
 RDebugUtils.currentLine=786433;
  //BA.debugLineNum = 786433;BA.debugLine="Log(MetroUI_TimeEdit1.Time(False))";
-__c.LogImpl("1786433",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null,__c.False),0);
+__c.LogImpl("3786433",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null,__c.False),0);
 RDebugUtils.currentLine=786434;
  //BA.debugLineNum = 786434;BA.debugLine="End Sub";
 return "";

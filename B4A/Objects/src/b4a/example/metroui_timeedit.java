@@ -185,48 +185,52 @@ RDebugUtils.currentLine=1114113;
  //BA.debugLineNum = 1114113;BA.debugLine="Try";
 try {RDebugUtils.currentLine=1114114;
  //BA.debugLineNum = 1114114;BA.debugLine="Log(New.Length)";
-__c.LogImpl("11114114",BA.NumberToString(_new.length()),0);
+__c.LogImpl("31114114",BA.NumberToString(_new.length()),0);
 RDebugUtils.currentLine=1114116;
- //BA.debugLineNum = 1114116;BA.debugLine="Dim Dakikaex As Int = Dakika_Text.Text";
+ //BA.debugLineNum = 1114116;BA.debugLine="If New.Length>=2 Then";
+if (_new.length()>=2) { 
+RDebugUtils.currentLine=1114117;
+ //BA.debugLineNum = 1114117;BA.debugLine="Dim Dakikaex As Int = Dakika_Text.Text";
 _dakikaex = (int)(Double.parseDouble(__ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText()));
-RDebugUtils.currentLine=1114118;
- //BA.debugLineNum = 1114118;BA.debugLine="If Dakikaex > 59 Then";
+RDebugUtils.currentLine=1114119;
+ //BA.debugLineNum = 1114119;BA.debugLine="If Dakikaex > 59 Then";
 if (_dakikaex>59) { 
-RDebugUtils.currentLine=1114120;
- //BA.debugLineNum = 1114120;BA.debugLine="Dakika_Text.Hint = \"00\"";
+RDebugUtils.currentLine=1114121;
+ //BA.debugLineNum = 1114121;BA.debugLine="Dakika_Text.Hint = \"00\"";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setHint("00");
-RDebugUtils.currentLine=1114124;
- //BA.debugLineNum = 1114124;BA.debugLine="Dakika_Text.Text = \"\"";
+RDebugUtils.currentLine=1114125;
+ //BA.debugLineNum = 1114125;BA.debugLine="Dakika_Text.Text = \"\"";
 __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence(""));
  }else 
-{RDebugUtils.currentLine=1114125;
- //BA.debugLineNum = 1114125;BA.debugLine="else if Dakikaex <= 59 Then";
+{RDebugUtils.currentLine=1114126;
+ //BA.debugLineNum = 1114126;BA.debugLine="else if Dakikaex <= 59 Then";
 if (_dakikaex<=59) { 
-RDebugUtils.currentLine=1114126;
- //BA.debugLineNum = 1114126;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True T";
-if (_new.length()==2 && __ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
 RDebugUtils.currentLine=1114127;
- //BA.debugLineNum = 1114127;BA.debugLine="Saniye_Text.RequestFocus";
+ //BA.debugLineNum = 1114127;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True";
+if (_new.length()==2 && __ref._saniyevisiblecheck /*boolean*/ ==__c.True) { 
+RDebugUtils.currentLine=1114128;
+ //BA.debugLineNum = 1114128;BA.debugLine="Saniye_Text.RequestFocus";
 __ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }else 
-{RDebugUtils.currentLine=1114128;
- //BA.debugLineNum = 1114128;BA.debugLine="Else If New.Length=0 Then";
+{RDebugUtils.currentLine=1114129;
+ //BA.debugLineNum = 1114129;BA.debugLine="Else If New.Length=0 Then";
 if (_new.length()==0) { 
-RDebugUtils.currentLine=1114129;
- //BA.debugLineNum = 1114129;BA.debugLine="Saat_Text.RequestFocus";
+RDebugUtils.currentLine=1114130;
+ //BA.debugLineNum = 1114130;BA.debugLine="Saat_Text.RequestFocus";
 __ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocus();
  }}
 ;
  }}
 ;
- } 
-       catch (Exception e15) {
-			ba.setLastException(e15);RDebugUtils.currentLine=1114133;
- //BA.debugLineNum = 1114133;BA.debugLine="Log(LastException)";
-__c.LogImpl("11114133",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=1114135;
- //BA.debugLineNum = 1114135;BA.debugLine="End Sub";
+ } 
+       catch (Exception e17) {
+			ba.setLastException(e17);RDebugUtils.currentLine=1114140;
+ //BA.debugLineNum = 1114140;BA.debugLine="Log(LastException)";
+__c.LogImpl("31114140",BA.ObjectToString(__c.LastException(ba)),0);
+ };
+RDebugUtils.currentLine=1114142;
+ //BA.debugLineNum = 1114142;BA.debugLine="End Sub";
 return "";
 }
 public String  _designercreateview(b4a.example.metroui_timeedit __ref,Object _base,anywheresoftware.b4a.objects.LabelWrapper _lbl,anywheresoftware.b4a.objects.collections.Map _props) throws Exception{
@@ -480,10 +484,13 @@ RDebugUtils.currentLine=1048577;
  //BA.debugLineNum = 1048577;BA.debugLine="Try";
 try {RDebugUtils.currentLine=1048578;
  //BA.debugLineNum = 1048578;BA.debugLine="Log(New.Length)";
-__c.LogImpl("11048578",BA.NumberToString(_new.length()),0);
+__c.LogImpl("31048578",BA.NumberToString(_new.length()),0);
 RDebugUtils.currentLine=1048584;
  //BA.debugLineNum = 1048584;BA.debugLine="Log(Saat_Text.Text)";
-__c.LogImpl("11048584",__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText(),0);
+__c.LogImpl("31048584",__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText(),0);
+RDebugUtils.currentLine=1048585;
+ //BA.debugLineNum = 1048585;BA.debugLine="If New.Length>=2 Then";
+if (_new.length()>=2) { 
 RDebugUtils.currentLine=1048586;
  //BA.debugLineNum = 1048586;BA.debugLine="Dim Saatex As Int = Saat_Text.Text";
 _saatex = (int)(Double.parseDouble(__ref._saat_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText()));
@@ -540,14 +547,15 @@ __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocu
 ;
  }}
 ;
- } 
-       catch (Exception e25) {
-			ba.setLastException(e25);RDebugUtils.currentLine=1048627;
- //BA.debugLineNum = 1048627;BA.debugLine="Log(LastException)";
-__c.LogImpl("11048627",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=1048629;
- //BA.debugLineNum = 1048629;BA.debugLine="End Sub";
+ } 
+       catch (Exception e27) {
+			ba.setLastException(e27);RDebugUtils.currentLine=1048628;
+ //BA.debugLineNum = 1048628;BA.debugLine="Log(LastException)";
+__c.LogImpl("31048628",BA.ObjectToString(__c.LastException(ba)),0);
+ };
+RDebugUtils.currentLine=1048630;
+ //BA.debugLineNum = 1048630;BA.debugLine="End Sub";
 return "";
 }
 public String  _saniye_textchanged(b4a.example.metroui_timeedit __ref,String _old,String _new) throws Exception{
@@ -562,7 +570,10 @@ RDebugUtils.currentLine=1179649;
  //BA.debugLineNum = 1179649;BA.debugLine="Try";
 try {RDebugUtils.currentLine=1179650;
  //BA.debugLineNum = 1179650;BA.debugLine="Log(New.Length)";
-__c.LogImpl("11179650",BA.NumberToString(_new.length()),0);
+__c.LogImpl("31179650",BA.NumberToString(_new.length()),0);
+RDebugUtils.currentLine=1179651;
+ //BA.debugLineNum = 1179651;BA.debugLine="If New.Length>=2 Then";
+if (_new.length()>=2) { 
 RDebugUtils.currentLine=1179652;
  //BA.debugLineNum = 1179652;BA.debugLine="Dim Saniyeex As Int = Saniye_Text.Text";
 _saniyeex = (int)(Double.parseDouble(__ref._saniye_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .getText()));
@@ -588,14 +599,15 @@ __ref._dakika_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .RequestFocu
  };
  }}
 ;
- } 
-       catch (Exception e13) {
-			ba.setLastException(e13);RDebugUtils.currentLine=1179667;
- //BA.debugLineNum = 1179667;BA.debugLine="Log(LastException)";
-__c.LogImpl("11179667",BA.ObjectToString(__c.LastException(ba)),0);
  };
-RDebugUtils.currentLine=1179669;
- //BA.debugLineNum = 1179669;BA.debugLine="End Sub";
+ } 
+       catch (Exception e15) {
+			ba.setLastException(e15);RDebugUtils.currentLine=1179668;
+ //BA.debugLineNum = 1179668;BA.debugLine="Log(LastException)";
+__c.LogImpl("31179668",BA.ObjectToString(__c.LastException(ba)),0);
+ };
+RDebugUtils.currentLine=1179670;
+ //BA.debugLineNum = 1179670;BA.debugLine="End Sub";
 return "";
 }
 }

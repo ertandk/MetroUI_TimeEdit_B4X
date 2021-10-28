@@ -236,45 +236,46 @@ Private Sub Saat_TextChanged (Old As String, New As String)
 		
 		
 		Log(Saat_Text.Text)
+		If New.Length>=2 Then
+			Dim Saatex As Int = Saat_Text.Text
 		
-		Dim Saatex As Int = Saat_Text.Text
-		
-		If ZamanDilimiOnikiYirmiDort = False Then
+			If ZamanDilimiOnikiYirmiDort = False Then
 			
-			If Saatex > 12 Then
+				If Saatex > 12 Then
 				
 				#if b4a 
-				Saat_Text.Hint = "00"
+					Saat_Text.Hint = "00"
 				#else
 				Saat_Text.HintText = "00"
 				#End If
 				
-				Saat_Text.Text = ""
+					Saat_Text.Text = ""
 				
-			Else if Saatex <= 12 Then
-				If New.Length = 2 Then
-					Dakika_Text.RequestFocus
+				Else if Saatex <= 12 Then
+					If New.Length = 2 Then
+						Dakika_Text.RequestFocus
+					End If
 				End If
-			End If
 
-		Else if ZamanDilimiOnikiYirmiDort = True Then
+			Else if ZamanDilimiOnikiYirmiDort = True Then
 	
-			If Saatex > 24 Then
+				If Saatex > 24 Then
 				
 				#if b4a 
-				Saat_Text.Hint = "00"
+					Saat_Text.Hint = "00"
 				#else
 				Saat_Text.HintText = "00"
 				#End If
 				
-				Saat_Text.Text = ""
+					Saat_Text.Text = ""
 				
-			Else if Saatex <= 24 Then
-				If New.Length = 2 Then
-					Dakika_Text.RequestFocus
+				Else if Saatex <= 24 Then
+					If New.Length = 2 Then
+						Dakika_Text.RequestFocus
+					End If
 				End If
-			End If
 			
+			End If
 		End If
 		
 	Catch
@@ -286,22 +287,29 @@ Private Sub Dakika_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
 		
-		Dim Dakikaex As Int = Dakika_Text.Text
+		If New.Length>=2 Then
+			Dim Dakikaex As Int = Dakika_Text.Text
 		
-		If Dakikaex > 59 Then
+			If Dakikaex > 59 Then
 			#if b4a 
-			Dakika_Text.Hint = "00"
+				Dakika_Text.Hint = "00"
 			#else
 			Dakika_Text.HintText = "00"
 			#End If
-			Dakika_Text.Text = ""
-		else if Dakikaex <= 59 Then
-			If New.Length = 2 And SaniyeVisibleCheck=True Then
-				Saniye_Text.RequestFocus
-			Else If New.Length=0 Then
-				Saat_Text.RequestFocus
+				Dakika_Text.Text = ""
+			else if Dakikaex <= 59 Then
+				If New.Length = 2 And SaniyeVisibleCheck=True Then
+					Saniye_Text.RequestFocus
+				Else If New.Length=0 Then
+					Saat_Text.RequestFocus
+				End If
 			End If
 		End If
+		
+			
+		
+		
+		
 	Catch
 		Log(LastException)
 	End Try
@@ -310,19 +318,20 @@ End Sub
 Private Sub Saniye_TextChanged (Old As String, New As String)
 	Try
 		Log(New.Length)
+		If New.Length>=2 Then
+			Dim Saniyeex As Int = Saniye_Text.Text
 		
-		Dim Saniyeex As Int = Saniye_Text.Text
-		
-		If Saniyeex > 59 Then
+			If Saniyeex > 59 Then
 			#if b4a 
-			Saniye_Text.Hint = "00"
+				Saniye_Text.Hint = "00"
 			#else
 			Saniye_Text.HintText = "00"
 			#End If
-			Saniye_Text.Text = ""
-		Else If Saniye_Text.Text <= 59 Then
-			If New.Length=0 Then
-				Dakika_Text.RequestFocus
+				Saniye_Text.Text = ""
+			Else If Saniye_Text.Text <= 59 Then
+				If New.Length=0 Then
+					Dakika_Text.RequestFocus
+				End If
 			End If
 		End If
 	Catch

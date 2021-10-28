@@ -8,14 +8,14 @@ public class metroui_timeedit_subs_0 {
 
 public static RemoteObject  _base_resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Base_Resize (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,344);
+		Debug.PushSubsStack("Base_Resize (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,353);
 if (RapidSub.canDelegate("base_resize")) { return __ref.runUserSub(false, "metroui_timeedit","base_resize", __ref, _width, _height);}
 Debug.locals.put("Width", _width);
 Debug.locals.put("Height", _height);
- BA.debugLineNum = 344;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 346;BA.debugLine="End Sub";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 353;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
+Debug.ShouldStop(1);
+ BA.debugLineNum = 355;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -75,60 +75,64 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _dakika_textchanged(RemoteObject __ref,RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("Dakika_TextChanged (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,279);
+		Debug.PushSubsStack("Dakika_TextChanged (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,280);
 if (RapidSub.canDelegate("dakika_textchanged")) { return __ref.runUserSub(false, "metroui_timeedit","dakika_textchanged", __ref, _old, _new);}
 RemoteObject _dakikaex = RemoteObject.createImmutable(0);
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
- BA.debugLineNum = 279;BA.debugLine="Private Sub Dakika_TextChanged (Old As String, New";
-Debug.ShouldStop(4194304);
- BA.debugLineNum = 280;BA.debugLine="Try";
+ BA.debugLineNum = 280;BA.debugLine="Private Sub Dakika_TextChanged (Old As String, New";
 Debug.ShouldStop(8388608);
-try { BA.debugLineNum = 281;BA.debugLine="Log(New.Length)";
+ BA.debugLineNum = 281;BA.debugLine="Try";
 Debug.ShouldStop(16777216);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11114114",BA.NumberToString(_new.runMethod(true,"length")),0);
- BA.debugLineNum = 283;BA.debugLine="Dim Dakikaex As Int = Dakika_Text.Text";
-Debug.ShouldStop(67108864);
-_dakikaex = BA.numberCast(int.class, __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("Dakikaex", _dakikaex);Debug.locals.put("Dakikaex", _dakikaex);
- BA.debugLineNum = 285;BA.debugLine="If Dakikaex > 59 Then";
+try { BA.debugLineNum = 282;BA.debugLine="Log(New.Length)";
+Debug.ShouldStop(33554432);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31114114",BA.NumberToString(_new.runMethod(true,"length")),0);
+ BA.debugLineNum = 284;BA.debugLine="If New.Length>=2 Then";
+Debug.ShouldStop(134217728);
+if (RemoteObject.solveBoolean("g",_new.runMethod(true,"length"),BA.numberCast(double.class, 2))) { 
+ BA.debugLineNum = 285;BA.debugLine="Dim Dakikaex As Int = Dakika_Text.Text";
 Debug.ShouldStop(268435456);
-if (RemoteObject.solveBoolean(">",_dakikaex,BA.numberCast(double.class, 59))) { 
- BA.debugLineNum = 287;BA.debugLine="Dakika_Text.Hint = \"00\"";
+_dakikaex = BA.numberCast(int.class, __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("Dakikaex", _dakikaex);Debug.locals.put("Dakikaex", _dakikaex);
+ BA.debugLineNum = 287;BA.debugLine="If Dakikaex > 59 Then";
 Debug.ShouldStop(1073741824);
+if (RemoteObject.solveBoolean(">",_dakikaex,BA.numberCast(double.class, 59))) { 
+ BA.debugLineNum = 289;BA.debugLine="Dakika_Text.Hint = \"00\"";
+Debug.ShouldStop(1);
 __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethod(true,"setHint",BA.ObjectToString("00"));
- BA.debugLineNum = 291;BA.debugLine="Dakika_Text.Text = \"\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 293;BA.debugLine="Dakika_Text.Text = \"\"";
+Debug.ShouldStop(16);
 __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
  }else 
-{ BA.debugLineNum = 292;BA.debugLine="else if Dakikaex <= 59 Then";
-Debug.ShouldStop(8);
-if (RemoteObject.solveBoolean("k",_dakikaex,BA.numberCast(double.class, 59))) { 
- BA.debugLineNum = 293;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True T";
-Debug.ShouldStop(16);
-if (RemoteObject.solveBoolean("=",_new.runMethod(true,"length"),BA.numberCast(double.class, 2)) && RemoteObject.solveBoolean("=",__ref.getField(true,"_saniyevisiblecheck" /*RemoteObject*/ ),metroui_timeedit.__c.getField(true,"True"))) { 
- BA.debugLineNum = 294;BA.debugLine="Saniye_Text.RequestFocus";
+{ BA.debugLineNum = 294;BA.debugLine="else if Dakikaex <= 59 Then";
 Debug.ShouldStop(32);
+if (RemoteObject.solveBoolean("k",_dakikaex,BA.numberCast(double.class, 59))) { 
+ BA.debugLineNum = 295;BA.debugLine="If New.Length = 2 And SaniyeVisibleCheck=True";
+Debug.ShouldStop(64);
+if (RemoteObject.solveBoolean("=",_new.runMethod(true,"length"),BA.numberCast(double.class, 2)) && RemoteObject.solveBoolean("=",__ref.getField(true,"_saniyevisiblecheck" /*RemoteObject*/ ),metroui_timeedit.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 296;BA.debugLine="Saniye_Text.RequestFocus";
+Debug.ShouldStop(128);
 __ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runVoidMethod ("RequestFocus");
  }else 
-{ BA.debugLineNum = 295;BA.debugLine="Else If New.Length=0 Then";
-Debug.ShouldStop(64);
+{ BA.debugLineNum = 297;BA.debugLine="Else If New.Length=0 Then";
+Debug.ShouldStop(256);
 if (RemoteObject.solveBoolean("=",_new.runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 296;BA.debugLine="Saat_Text.RequestFocus";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 298;BA.debugLine="Saat_Text.RequestFocus";
+Debug.ShouldStop(512);
 __ref.getField(false,"_saat_text" /*RemoteObject*/ ).runVoidMethod ("RequestFocus");
  }}
 ;
  }}
 ;
+ };
  Debug.CheckDeviceExceptions();
 } 
-       catch (Exception e15) {
-			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e15.toString()); BA.debugLineNum = 300;BA.debugLine="Log(LastException)";
-Debug.ShouldStop(2048);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11114133",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
+       catch (Exception e17) {
+			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e17.toString()); BA.debugLineNum = 308;BA.debugLine="Log(LastException)";
+Debug.ShouldStop(524288);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31114140",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
  };
- BA.debugLineNum = 302;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 310;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -405,10 +409,13 @@ Debug.ShouldStop(-2147483648);
 Debug.ShouldStop(1);
 try { BA.debugLineNum = 226;BA.debugLine="Log(New.Length)";
 Debug.ShouldStop(2);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11048578",BA.NumberToString(_new.runMethod(true,"length")),0);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31048578",BA.NumberToString(_new.runMethod(true,"length")),0);
  BA.debugLineNum = 232;BA.debugLine="Log(Saat_Text.Text)";
 Debug.ShouldStop(128);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11048584",__ref.getField(false,"_saat_text" /*RemoteObject*/ ).runMethod(true,"getText"),0);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31048584",__ref.getField(false,"_saat_text" /*RemoteObject*/ ).runMethod(true,"getText"),0);
+ BA.debugLineNum = 233;BA.debugLine="If New.Length>=2 Then";
+Debug.ShouldStop(256);
+if (RemoteObject.solveBoolean("g",_new.runMethod(true,"length"),BA.numberCast(double.class, 2))) { 
  BA.debugLineNum = 234;BA.debugLine="Dim Saatex As Int = Saat_Text.Text";
 Debug.ShouldStop(512);
 _saatex = BA.numberCast(int.class, __ref.getField(false,"_saat_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("Saatex", _saatex);Debug.locals.put("Saatex", _saatex);
@@ -465,15 +472,16 @@ __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runVoidMethod ("RequestFo
 ;
  }}
 ;
+ };
  Debug.CheckDeviceExceptions();
 } 
-       catch (Exception e25) {
-			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e25.toString()); BA.debugLineNum = 275;BA.debugLine="Log(LastException)";
-Debug.ShouldStop(262144);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11048627",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
+       catch (Exception e27) {
+			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e27.toString()); BA.debugLineNum = 276;BA.debugLine="Log(LastException)";
+Debug.ShouldStop(524288);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31048628",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
  };
- BA.debugLineNum = 277;BA.debugLine="End Sub";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 278;BA.debugLine="End Sub";
+Debug.ShouldStop(2097152);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -484,52 +492,56 @@ finally {
 		}}
 public static RemoteObject  _saniye_textchanged(RemoteObject __ref,RemoteObject _old,RemoteObject _new) throws Exception{
 try {
-		Debug.PushSubsStack("Saniye_TextChanged (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,304);
+		Debug.PushSubsStack("Saniye_TextChanged (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,312);
 if (RapidSub.canDelegate("saniye_textchanged")) { return __ref.runUserSub(false, "metroui_timeedit","saniye_textchanged", __ref, _old, _new);}
 RemoteObject _saniyeex = RemoteObject.createImmutable(0);
 Debug.locals.put("Old", _old);
 Debug.locals.put("New", _new);
- BA.debugLineNum = 304;BA.debugLine="Private Sub Saniye_TextChanged (Old As String, New";
-Debug.ShouldStop(32768);
- BA.debugLineNum = 305;BA.debugLine="Try";
-Debug.ShouldStop(65536);
-try { BA.debugLineNum = 306;BA.debugLine="Log(New.Length)";
-Debug.ShouldStop(131072);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11179650",BA.NumberToString(_new.runMethod(true,"length")),0);
- BA.debugLineNum = 308;BA.debugLine="Dim Saniyeex As Int = Saniye_Text.Text";
-Debug.ShouldStop(524288);
-_saniyeex = BA.numberCast(int.class, __ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("Saniyeex", _saniyeex);Debug.locals.put("Saniyeex", _saniyeex);
- BA.debugLineNum = 310;BA.debugLine="If Saniyeex > 59 Then";
-Debug.ShouldStop(2097152);
-if (RemoteObject.solveBoolean(">",_saniyeex,BA.numberCast(double.class, 59))) { 
- BA.debugLineNum = 312;BA.debugLine="Saniye_Text.Hint = \"00\"";
+ BA.debugLineNum = 312;BA.debugLine="Private Sub Saniye_TextChanged (Old As String, New";
 Debug.ShouldStop(8388608);
-__ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"setHint",BA.ObjectToString("00"));
- BA.debugLineNum = 316;BA.debugLine="Saniye_Text.Text = \"\"";
+ BA.debugLineNum = 313;BA.debugLine="Try";
+Debug.ShouldStop(16777216);
+try { BA.debugLineNum = 314;BA.debugLine="Log(New.Length)";
+Debug.ShouldStop(33554432);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31179650",BA.NumberToString(_new.runMethod(true,"length")),0);
+ BA.debugLineNum = 315;BA.debugLine="If New.Length>=2 Then";
+Debug.ShouldStop(67108864);
+if (RemoteObject.solveBoolean("g",_new.runMethod(true,"length"),BA.numberCast(double.class, 2))) { 
+ BA.debugLineNum = 316;BA.debugLine="Dim Saniyeex As Int = Saniye_Text.Text";
 Debug.ShouldStop(134217728);
+_saniyeex = BA.numberCast(int.class, __ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("Saniyeex", _saniyeex);Debug.locals.put("Saniyeex", _saniyeex);
+ BA.debugLineNum = 318;BA.debugLine="If Saniyeex > 59 Then";
+Debug.ShouldStop(536870912);
+if (RemoteObject.solveBoolean(">",_saniyeex,BA.numberCast(double.class, 59))) { 
+ BA.debugLineNum = 320;BA.debugLine="Saniye_Text.Hint = \"00\"";
+Debug.ShouldStop(-2147483648);
+__ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"setHint",BA.ObjectToString("00"));
+ BA.debugLineNum = 324;BA.debugLine="Saniye_Text.Text = \"\"";
+Debug.ShouldStop(8);
 __ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
  }else 
-{ BA.debugLineNum = 317;BA.debugLine="Else If Saniye_Text.Text <= 59 Then";
-Debug.ShouldStop(268435456);
+{ BA.debugLineNum = 325;BA.debugLine="Else If Saniye_Text.Text <= 59 Then";
+Debug.ShouldStop(16);
 if (RemoteObject.solveBoolean("k",BA.numberCast(double.class, __ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"getText")),BA.numberCast(double.class, 59))) { 
- BA.debugLineNum = 318;BA.debugLine="If New.Length=0 Then";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 326;BA.debugLine="If New.Length=0 Then";
+Debug.ShouldStop(32);
 if (RemoteObject.solveBoolean("=",_new.runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 319;BA.debugLine="Dakika_Text.RequestFocus";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 327;BA.debugLine="Dakika_Text.RequestFocus";
+Debug.ShouldStop(64);
 __ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runVoidMethod ("RequestFocus");
  };
  }}
 ;
+ };
  Debug.CheckDeviceExceptions();
 } 
-       catch (Exception e13) {
-			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e13.toString()); BA.debugLineNum = 323;BA.debugLine="Log(LastException)";
-Debug.ShouldStop(4);
-metroui_timeedit.__c.runVoidMethod ("LogImpl","11179667",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
+       catch (Exception e15) {
+			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e15.toString()); BA.debugLineNum = 332;BA.debugLine="Log(LastException)";
+Debug.ShouldStop(2048);
+metroui_timeedit.__c.runVoidMethod ("LogImpl","31179668",BA.ObjectToString(metroui_timeedit.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
  };
- BA.debugLineNum = 325;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 334;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -540,32 +552,32 @@ finally {
 		}}
 public static RemoteObject  _time(RemoteObject __ref,RemoteObject _hourminiute) throws Exception{
 try {
-		Debug.PushSubsStack("Time (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,327);
+		Debug.PushSubsStack("Time (metroui_timeedit) ","metroui_timeedit",3,__ref.getField(false, "ba"),__ref,336);
 if (RapidSub.canDelegate("time")) { return __ref.runUserSub(false, "metroui_timeedit","time", __ref, _hourminiute);}
 RemoteObject _saatvedakika = RemoteObject.createImmutable("");
 RemoteObject _saatvedakikavesaniye = RemoteObject.createImmutable("");
 Debug.locals.put("HourMiniute", _hourminiute);
- BA.debugLineNum = 327;BA.debugLine="Public Sub Time(HourMiniute As Boolean)";
-Debug.ShouldStop(64);
- BA.debugLineNum = 328;BA.debugLine="If HourMiniute = True Then";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 336;BA.debugLine="Public Sub Time(HourMiniute As Boolean)";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 337;BA.debugLine="If HourMiniute = True Then";
+Debug.ShouldStop(65536);
 if (RemoteObject.solveBoolean("=",_hourminiute,metroui_timeedit.__c.getField(true,"True"))) { 
- BA.debugLineNum = 330;BA.debugLine="Dim SaatveDakika As String = Saat_Text.Text & \":";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 339;BA.debugLine="Dim SaatveDakika As String = Saat_Text.Text & \":";
+Debug.ShouldStop(262144);
 _saatvedakika = RemoteObject.concat(__ref.getField(false,"_saat_text" /*RemoteObject*/ ).runMethod(true,"getText"),RemoteObject.createImmutable(":"),__ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("SaatveDakika", _saatvedakika);Debug.locals.put("SaatveDakika", _saatvedakika);
- BA.debugLineNum = 332;BA.debugLine="Return SaatveDakika";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 341;BA.debugLine="Return SaatveDakika";
+Debug.ShouldStop(1048576);
 Debug.CheckDeviceExceptions();if (true) return _saatvedakika;
  }else {
- BA.debugLineNum = 336;BA.debugLine="Dim SaatveDakikaveSaniye As String = Saat_Text.T";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 345;BA.debugLine="Dim SaatveDakikaveSaniye As String = Saat_Text.T";
+Debug.ShouldStop(16777216);
 _saatvedakikavesaniye = RemoteObject.concat(__ref.getField(false,"_saat_text" /*RemoteObject*/ ).runMethod(true,"getText"),RemoteObject.createImmutable(":"),__ref.getField(false,"_dakika_text" /*RemoteObject*/ ).runMethod(true,"getText"),RemoteObject.createImmutable(":"),__ref.getField(false,"_saniye_text" /*RemoteObject*/ ).runMethod(true,"getText"));Debug.locals.put("SaatveDakikaveSaniye", _saatvedakikavesaniye);Debug.locals.put("SaatveDakikaveSaniye", _saatvedakikavesaniye);
- BA.debugLineNum = 338;BA.debugLine="Return SaatveDakikaveSaniye";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 347;BA.debugLine="Return SaatveDakikaveSaniye";
+Debug.ShouldStop(67108864);
 Debug.CheckDeviceExceptions();if (true) return _saatvedakikavesaniye;
  };
- BA.debugLineNum = 342;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 351;BA.debugLine="End Sub";
+Debug.ShouldStop(1073741824);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

@@ -37,7 +37,7 @@ if (RapidSub.canDelegate("button1_click")) { return __ref.runUserSub(false, "b4x
 Debug.ShouldStop(1073741824);
  BA.debugLineNum = 32;BA.debugLine="Log(MetroUI_TimeEdit1.Time(False))";
 Debug.ShouldStop(-2147483648);
-b4xmainpage.__c.runVoidMethod ("LogImpl","1786433",__ref.getField(false,"_metroui_timeedit1" /*RemoteObject*/ ).runClassMethod (b4a.example.metroui_timeedit.class, "_time" /*RemoteObject*/ ,(Object)(b4xmainpage.__c.getField(true,"False"))),0);
+b4xmainpage.__c.runVoidMethod ("LogImpl","3786433",__ref.getField(false,"_metroui_timeedit1" /*RemoteObject*/ ).runClassMethod (b4a.example.metroui_timeedit.class, "_time" /*RemoteObject*/ ,(Object)(b4xmainpage.__c.getField(true,"False"))),0);
  BA.debugLineNum = 33;BA.debugLine="End Sub";
 Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");

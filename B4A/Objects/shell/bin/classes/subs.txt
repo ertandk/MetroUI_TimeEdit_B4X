@@ -238,11 +238,11 @@ b4xpagesmanager,updatestackstring,0,0,644,656
 
 
 b4xset,getsize,b4xset,aslist,b4xorderedmap,getsize,b4xorderedmap,getkeys
-b4xmainpage,b4xpage_created,1,1,19,27
+b4xmainpage,b4xpage_created,1,0,19,27
 
 
 
-b4xmainpage,button1_click,0,1,31,33
+b4xmainpage,button1_click,0,0,31,33
 
 
 metroui_timeedit,time
@@ -254,11 +254,11 @@ b4xmainpage,initialize,0,0,14,16
 
 
 
-metroui_timeedit,time,0,1,327,342
+metroui_timeedit,time,0,0,336,351
 
 
 
-metroui_timeedit,base_resize,0,0,344,346
+metroui_timeedit,base_resize,0,0,353,355
 
 
 
@@ -266,7 +266,7 @@ metroui_timeedit,class_globals,0,0,7,45
 
 
 
-metroui_timeedit,dakika_textchanged,1,1,279,302
+metroui_timeedit,dakika_textchanged,1,1,280,310
 
 
 
@@ -274,15 +274,15 @@ metroui_timeedit,designercreateview,0,0,149,222
 
 
 
-metroui_timeedit,initialize,0,1,47,146
+metroui_timeedit,initialize,0,0,47,146
 
 
 
-metroui_timeedit,saat_textchanged,1,0,224,277
+metroui_timeedit,saat_textchanged,1,1,224,278
 
 
 
-metroui_timeedit,saniye_textchanged,1,1,304,325
+metroui_timeedit,saniye_textchanged,1,1,312,334
 
 
 
