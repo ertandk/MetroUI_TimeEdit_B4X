@@ -10,12 +10,12 @@ Version=11
 #DesignerProperty: Key: TextColor, DisplayName: Text Color, FieldType: Color, DefaultValue: #FF000000, Description: Text Color
 #DesignerProperty: Key: ClockColor, DisplayName: Clock Color, FieldType: Color, DefaultValue: #FFFFFFFF, Description: Clock Color
 
-Sub Class_Globals
+Private Sub Class_Globals
 	Private mEventName As String 'ignore
 	Private mCallBack As Object 'ignore
-	Public mBase As B4XView
+	Private mBase As B4XView
 	Private xui As XUI 'ignore
-	Public Tag As Object
+	Private Tag As Object 'ignore
 	
 	
 	Private AnaPanel As Panel
@@ -33,17 +33,17 @@ Sub Class_Globals
 	Private ClockColor As String 'ignore
 	
 	#If B4A
-	Public Saat_Text As EditText
-	Private Dakika_Text As EditText
-	Private Saniye_Text As EditText
+	Public Hour_Text As EditText
+	Private Minute_Text As EditText
+	Private Second_Text As EditText
 	Private SaatLabel As Label
 	Private DakikaLabel As Label
 	
 	Private IME As IME
 	#Else
-	Public Saat_Text As TextField
-	Private Dakika_Text As TextField
-	Private Saniye_Text As TextField
+	Public Hour_Text As TextField
+	Public Minute_Text As TextField
+	Public Second_Text As TextField
 	Private SaatLabel As Label
 	Private DakikaLabel As Label
 	#End If
@@ -66,17 +66,17 @@ Public Sub Initialize (Callback As Object, EventName As String)
 	
 	#End If
 
-	Saat_Text.Initialize("Saat")
-	Dakika_Text.Initialize("Dakika")
-	Saniye_Text.Initialize("Saniye")
+	Hour_Text.Initialize("Hour_Text")
+	Minute_Text.Initialize("Minute_Text")
+	Second_Text.Initialize("Second_Text")
 	
 	SaatLabel.Initialize("SaatLabel")
 	DakikaLabel.Initialize("DakikaLabel")
 
 
-	Saatb4x=Saat_Text
-	Dakikab4x=Dakika_Text
-	Saniyeb4x=Saniye_Text
+	Saatb4x=Hour_Text
+	Dakikab4x=Minute_Text
+	Saniyeb4x=Second_Text
 	
 	SaatLblb4x=SaatLabel
 	Dakikalblbb4x=DakikaLabel
@@ -84,47 +84,57 @@ Public Sub Initialize (Callback As Object, EventName As String)
 	#IF B4A
 	IME.Initialize("")
 	
-	Saat_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
-	Dakika_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
-	Saniye_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
+	Hour_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
+	Minute_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
+	Second_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
 	
-	Saat_Text.Gravity=Gravity.CENTER
-	Dakika_Text.Gravity=Gravity.CENTER
-	Saniye_Text.Gravity=Gravity.CENTER
+	Hour_Text.Gravity=Gravity.CENTER
+	Minute_Text.Gravity=Gravity.CENTER
+	Second_Text.Gravity=Gravity.CENTER
 	
 	SaatLabel.Gravity=Gravity.CENTER
 	DakikaLabel.Gravity=Gravity.CENTER
 	
-	Saat_Text.Color = Colors.Transparent
-	Dakika_Text.Color=Colors.Transparent
-	Saniye_Text.Color=Colors.Transparent
+	Hour_Text.Color = Colors.Transparent
+	Minute_Text.Color=Colors.Transparent
+	Second_Text.Color=Colors.Transparent
 		
-	Saat_Text.Hint="00"
+	Hour_Text.Hint="00"
 	SaatLabel.Text=":"
-	Dakika_Text.Hint="00"
+	Minute_Text.Hint="00"
 	DakikaLabel.Text=":"
-	Saniye_Text.Hint="00"
+	Second_Text.Hint="00"
 	
 	#Else
 	
+	Hour_Text.KeyboardType=4
+	Minute_Text.KeyboardType=4
+	Second_Text.KeyboardType=4
+	
+	Hour_Text.TextAlignment=1
+	Minute_Text.TextAlignment=1
+	Second_Text.TextAlignment=1
+	
+	SaatLabel.TextAlignment=1
+	DakikaLabel.TextAlignment=1
 	
 	
 	#End If
 	
-'	Saat_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
-'	Dakika_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
-'	Saniye_Text.InputType=Saat_Text.INPUT_TYPE_NUMBERS
+'	Hour_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
+'	Minute_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
+'	Second_Text.InputType=Hour_Text.INPUT_TYPE_NUMBERS
 	
-'	Saat_Text
-'	Dakika_Text.Gravity=Gravity.CENTER
-'	Saniye_Text.Gravity=Gravity.CENTER
+'	Hour_Text
+'	Minute_Text.Gravity=Gravity.CENTER
+'	Second_Text.Gravity=Gravity.CENTER
 '	
 '	SaatLabel.Gravity=Gravity.CENTER
 '	DakikaLabel.Gravity=Gravity.CENTER
 	
-	Saat_Text.Color = Colors.Transparent
-	Dakika_Text.Color=Colors.Transparent
-	Saniye_Text.Color=Colors.Transparent
+	Hour_Text.Color = Colors.Transparent
+	Minute_Text.Color=Colors.Transparent
+	Second_Text.Color=Colors.Transparent
 		
 		
 	SaatLabel.Text=":"
@@ -132,17 +142,17 @@ Public Sub Initialize (Callback As Object, EventName As String)
 	
 	
 	#if b4a
-	Saat_Text.Hint="00"
+	Hour_Text.Hint="00"
 	
-	Dakika_Text.Hint="00"
+	Minute_Text.Hint="00"
 	
-	Saniye_Text.Hint="00"
+	Second_Text.Hint="00"
 	 #else
-	Saat_Text.HintText="00"
+	Hour_Text.HintText="00"
 	
-	Dakika_Text.HintText="00"
+	Minute_Text.HintText="00"
 	
-	Saniye_Text.HintText="00"
+	Second_Text.HintText="00"
 	#End If
 	
 	
@@ -173,8 +183,17 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	AnaPanel.Background=PanelArkaPlanOzellikleri
 	
 	#else b4i
+'	
+'	AnaPanel.SetBorder(0,BorderColor,ArkaPlanRadius)
+
+	AnaPanel.SetBorder(0,BackgroundColor,0)
 	
-	MyPanel.SetBorder(BorderWidth,BorderColor,ArkaPlanRadius)
+	AnaPanel.SetColorAnimated(0,BackgroundColor)
+	
+	Hour_Text.BorderStyle=0
+	Minute_Text.BorderStyle=0
+	Second_Text.BorderStyle=0
+	
 	
 	
 	#End If
@@ -184,42 +203,42 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	
 	
 	If SaniyeVisibleCheck=True Then
-		AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/3,mBase.Height)
-		AnaPanel.AddView(SaatLabel,Saat_Text.Width - 3dip ,0,5dip,mBase.Height-3dip)
-		AnaPanel.AddView(Dakika_Text,mBase.Width/3,0,mBase.Width/3,mBase.Height)
-		AnaPanel.AddView(DakikaLabel,Dakika_Text.Left + Dakika_Text.Width - 3dip,0,5dip,mBase.Height-3dip)
-		AnaPanel.AddView(Saniye_Text,Dakika_Text.Left+Dakika_Text.Width,0,mBase.Width/3,mBase.Height)
+		AnaPanel.AddView(Hour_Text,0%x,0,mBase.Width/3,mBase.Height)
+		AnaPanel.AddView(SaatLabel,Hour_Text.Width - 3dip ,0,5dip,mBase.Height-3dip)
+		AnaPanel.AddView(Minute_Text,mBase.Width/3,0,mBase.Width/3,mBase.Height)
+		AnaPanel.AddView(DakikaLabel,Minute_Text.Left + Minute_Text.Width - 3dip,0,5dip,mBase.Height-3dip)
+		AnaPanel.AddView(Second_Text,Minute_Text.Left+Minute_Text.Width,0,mBase.Width/3,mBase.Height)
 	Else ' saniye yoksa
-		AnaPanel.AddView(Saat_Text,0%x,0,mBase.Width/2,mBase.Height)
-		AnaPanel.AddView(SaatLabel,Saat_Text.Width - 2dip ,0,5dip,mBase.Height-3dip)
-		AnaPanel.AddView(Dakika_Text,mBase.Width/2,0,mBase.Width/2,mBase.Height)
+		AnaPanel.AddView(Hour_Text,0%x,0,mBase.Width/2,mBase.Height)
+		AnaPanel.AddView(SaatLabel,Hour_Text.Width - 2dip ,0,5dip,mBase.Height-3dip)
+		AnaPanel.AddView(Minute_Text,mBase.Width/2,0,mBase.Width/2,mBase.Height)
 	End If
 	
 	#if b4a
 	
-	Saat_Text.HintColor = TextColor
-	Dakika_Text.HintColor = TextColor
-	Saniye_Text.HintColor = TextColor
+	Hour_Text.HintColor = TextColor
+	Minute_Text.HintColor = TextColor
+	Second_Text.HintColor = TextColor
 	
-	IME.SetLengthFilter(Saat_Text, 2)
-	IME.SetLengthFilter(Dakika_Text, 2)
-	IME.SetLengthFilter(Saniye_Text, 2)
+	IME.SetLengthFilter(Hour_Text, 2)
+	IME.SetLengthFilter(Minute_Text, 2)
+	IME.SetLengthFilter(Second_Text, 2)
 	
 	#else b4i
 	
-
-	Saat_Text.TintColor = TextColor
-	Dakika_Text.TintColor = TextColor
-	Saniye_Text.TintColor = TextColor
+'
+'	Hour_Text.TintColor = TextColor
+'	Minute_Text.TintColor = TextColor
+'	Second_Text.TintColor = TextColor
 	
 	
 	#End If
 	
 	
 	
-	Saat_Text.TextColor = TextColor
-	Dakika_Text.TextColor = TextColor
-	Saniye_Text.TextColor = TextColor
+	Hour_Text.TextColor = TextColor
+	Minute_Text.TextColor = TextColor
+	Second_Text.TextColor = TextColor
 	SaatLabel.TextColor= ClockColor
 	DakikaLabel.TextColor= ClockColor
 	
@@ -227,51 +246,48 @@ Public Sub DesignerCreateView (Base As Object, Lbl As Label, Props As Map)
 	
 End Sub
 
-Private Sub Saat_TextChanged (Old As String, New As String)
+Private Sub Hour_Text_TextChanged (Old As String, New As String)
 	Try
-		Log(New.Length)
+		#if b4i
+			Sleep(10)
+		#End If
 		
-		
-		
-		
-		
-		Log(Saat_Text.Text)
 		If New.Length>=2 Then
-			Dim Saatex As Int = Saat_Text.Text
+			Dim Saatex As Int = Hour_Text.Text
 		
 			If ZamanDilimiOnikiYirmiDort = False Then
 			
 				If Saatex > 12 Then
 				
 				#if b4a 
-					Saat_Text.Hint = "00"
+					Hour_Text.Hint = "00"
 				#else
-				Saat_Text.HintText = "00"
+				Hour_Text.HintText = "00"
 				#End If
 				
-					Saat_Text.Text = ""
+					Hour_Text.Text = ""
 				
 				Else if Saatex <= 12 Then
 					If New.Length = 2 Then
-						Dakika_Text.RequestFocus
+					Minute_Text.RequestFocus
 					End If
 				End If
 
 			Else if ZamanDilimiOnikiYirmiDort = True Then
 	
-				If Saatex > 24 Then
+				If Saatex >= 24 Then
 				
 				#if b4a 
-					Saat_Text.Hint = "00"
+					Hour_Text.Hint = "00"
 				#else
-				Saat_Text.HintText = "00"
+				Hour_Text.HintText = "00"
 				#End If
 				
-					Saat_Text.Text = ""
+					Hour_Text.Text = ""
 				
 				Else if Saatex <= 24 Then
 					If New.Length = 2 Then
-						Dakika_Text.RequestFocus
+						Minute_Text.RequestFocus
 					End If
 				End If
 			
@@ -283,73 +299,118 @@ Private Sub Saat_TextChanged (Old As String, New As String)
 	End Try
 End Sub
 
-Private Sub Dakika_TextChanged (Old As String, New As String)
+Private Sub Minute_Text_TextChanged (Old As String, New As String)
 	Try
-		Log(New.Length)
+		
+		#if b4i
+		Sleep(10)
+		If Minute_Text.Text.Length>2 Then
+			CallSubDelayed3(Me, "CutText",Minute_Text,2)
+		End If
+		#End If
+		
+		
 		
 		If New.Length>=2 Then
-			Dim Dakikaex As Int = Dakika_Text.Text
+			Dim Dakikaex As Int = Minute_Text.Text
+			
+			
 		
 			If Dakikaex > 59 Then
 			#if b4a 
-				Dakika_Text.Hint = "00"
+				Minute_Text.Hint = "00"
 			#else
-			Dakika_Text.HintText = "00"
+			Minute_Text.HintText = "00"
 			#End If
-				Dakika_Text.Text = ""
+				Minute_Text.Text = ""
 			else if Dakikaex <= 59 Then
 				If New.Length = 2 And SaniyeVisibleCheck=True Then
-					Saniye_Text.RequestFocus
-				Else If New.Length=0 Then
-					Saat_Text.RequestFocus
+					Second_Text.RequestFocus
+				Else If New.Length=2 Then
+					#if b4i
+					Minute_Text.ResignFocus
+					#else if b4a
+					IME.HideKeyboard
+					#end if
+			
 				End If
 			End If
 		End If
 		
-			
-		
-		
+		If New.Length=0 Then
+			Hour_Text.RequestFocus
+		End If
 		
 	Catch
 		Log(LastException)
 	End Try
 End Sub
 
-Private Sub Saniye_TextChanged (Old As String, New As String)
+Private Sub Second_Text_TextChanged (Old As String, New As String)
 	Try
-		Log(New.Length)
+		
+		#if b4i
+		Sleep(10)
+		If Second_Text.Text.Length>2 Then
+			CallSubDelayed3(Me, "CutText",Second_Text,2)
+		End If
+		#End If
+		
+		
+		
 		If New.Length>=2 Then
-			Dim Saniyeex As Int = Saniye_Text.Text
+			Dim Saniyeex As Int = Second_Text.Text
 		
 			If Saniyeex > 59 Then
 			#if b4a 
-				Saniye_Text.Hint = "00"
+				Second_Text.Hint = "00"
 			#else
-			Saniye_Text.HintText = "00"
+				Second_Text.HintText = "00"
 			#End If
-				Saniye_Text.Text = ""
-			Else If Saniye_Text.Text <= 59 Then
-				If New.Length=0 Then
-					Dakika_Text.RequestFocus
+				Second_Text.Text = ""
+			Else If Second_Text.Text <= 59 Then
+				
+				If New.Length=2 Then
+					#if b4i
+					Second_Text.ResignFocus
+					#else if b4a
+					IME.HideKeyboard
+					#end if
 				End If
+				
 			End If
+			
+			
 		End If
+		
+		If New.Length=0 Then
+			Minute_Text.RequestFocus
+		End If
+		
 	Catch
 		Log(LastException)
 	End Try
 End Sub
 
-Public Sub Time(HourMiniute As Boolean)
-	If HourMiniute = True Then
+ #if b4i
+Sub CutText(Tf As TextField,MaxLength As Int)
+	If Tf.Text.Length > MaxLength Then
+		Tf.Text = Tf.Text.SubString2(0,MaxLength)
+	End If
+End Sub
+#End If
+
+Public Sub Time
+	If SaniyeVisibleCheck=False And Hour_Text.Text.Length<>0 And Minute_Text.Text.Length<>0 Then
 	
-		Dim SaatveDakika As String = Saat_Text.Text & ":" & Dakika_Text.Text
+		Dim SaatveDakika As String = Hour_Text.Text & ":" & Minute_Text.Text
 	
 		Return SaatveDakika
 		
-		Else
+	Else if SaniyeVisibleCheck=True And Hour_Text.Text.Length<>0 And Minute_Text.Text.Length<>0 And Second_Text.Text.Length<>0 Then
 			
-		Dim SaatveDakikaveSaniye As String = Saat_Text.Text & ":" & Dakika_Text.Text & ":" & Saniye_Text.Text
-	
+		Dim SaatveDakikaveSaniye As String = Hour_Text.Text & ":" & Minute_Text.Text & ":" & Second_Text.Text
+		
 		Return SaatveDakikaveSaniye
 	
 	End If

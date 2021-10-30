@@ -34,6 +34,7 @@ public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper _root = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
 public b4a.example.metroui_timeedit _metroui_timeedit1 = null;
+public b4a.example.metroui_timeedit _metroui_timeedit2 = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.b4xpages _b4xpages = null;
@@ -51,8 +52,11 @@ __ref._root /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = _root1;
 RDebugUtils.currentLine=720898;
  //BA.debugLineNum = 720898;BA.debugLine="Root.LoadLayout(\"MainPage\")";
 __ref._root /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .LoadLayout("MainPage",ba);
-RDebugUtils.currentLine=720904;
- //BA.debugLineNum = 720904;BA.debugLine="End Sub";
+RDebugUtils.currentLine=720900;
+ //BA.debugLineNum = 720900;BA.debugLine="MetroUI_TimeEdit1.Hour_Text.Text=\"23\"";
+__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._hour_text /*anywheresoftware.b4a.objects.EditTextWrapper*/ .setText(BA.ObjectToCharSequence("23"));
+RDebugUtils.currentLine=720902;
+ //BA.debugLineNum = 720902;BA.debugLine="End Sub";
 return "";
 }
 public String  _button1_click(b4a.example.b4xmainpage __ref) throws Exception{
@@ -63,8 +67,8 @@ if (Debug.shouldDelegate(ba, "button1_click", false))
 RDebugUtils.currentLine=786432;
  //BA.debugLineNum = 786432;BA.debugLine="Private Sub Button1_Click";
 RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="Log(MetroUI_TimeEdit1.Time(False))";
-__c.LogImpl("3786433",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null,__c.False),0);
+ //BA.debugLineNum = 786433;BA.debugLine="Log(MetroUI_TimeEdit1.Time)";
+__c.LogImpl("7786433",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null),0);
 RDebugUtils.currentLine=786434;
  //BA.debugLineNum = 786434;BA.debugLine="End Sub";
 return "";
@@ -84,7 +88,10 @@ RDebugUtils.currentLine=589827;
  //BA.debugLineNum = 589827;BA.debugLine="Private MetroUI_TimeEdit1 As MetroUI_TimeEdit";
 _metroui_timeedit1 = new b4a.example.metroui_timeedit();
 RDebugUtils.currentLine=589828;
- //BA.debugLineNum = 589828;BA.debugLine="End Sub";
+ //BA.debugLineNum = 589828;BA.debugLine="Private MetroUI_TimeEdit2 As MetroUI_TimeEdit";
+_metroui_timeedit2 = new b4a.example.metroui_timeedit();
+RDebugUtils.currentLine=589829;
+ //BA.debugLineNum = 589829;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.example.b4xmainpage __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -97,6 +104,34 @@ RDebugUtils.currentLine=655360;
  //BA.debugLineNum = 655360;BA.debugLine="Public Sub Initialize";
 RDebugUtils.currentLine=655362;
  //BA.debugLineNum = 655362;BA.debugLine="End Sub";
+return "";
+}
+public String  _time_button_click(b4a.example.b4xmainpage __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="b4xmainpage";
+if (Debug.shouldDelegate(ba, "time_button_click", false))
+	 {return ((String) Debug.delegate(ba, "time_button_click", null));}
+RDebugUtils.currentLine=917504;
+ //BA.debugLineNum = 917504;BA.debugLine="Private Sub Time_Button_Click";
+RDebugUtils.currentLine=917505;
+ //BA.debugLineNum = 917505;BA.debugLine="Log(MetroUI_TimeEdit2.Time)";
+__c.LogImpl("7917505",__ref._metroui_timeedit2 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null),0);
+RDebugUtils.currentLine=917506;
+ //BA.debugLineNum = 917506;BA.debugLine="End Sub";
+return "";
+}
+public String  _time_second_button_click(b4a.example.b4xmainpage __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="b4xmainpage";
+if (Debug.shouldDelegate(ba, "time_second_button_click", false))
+	 {return ((String) Debug.delegate(ba, "time_second_button_click", null));}
+RDebugUtils.currentLine=851968;
+ //BA.debugLineNum = 851968;BA.debugLine="Private Sub Time_Second_Button_Click";
+RDebugUtils.currentLine=851969;
+ //BA.debugLineNum = 851969;BA.debugLine="Log(MetroUI_TimeEdit1.Time)";
+__c.LogImpl("7851969",__ref._metroui_timeedit1 /*b4a.example.metroui_timeedit*/ ._time /*String*/ (null),0);
+RDebugUtils.currentLine=851970;
+ //BA.debugLineNum = 851970;BA.debugLine="End Sub";
 return "";
 }
 }

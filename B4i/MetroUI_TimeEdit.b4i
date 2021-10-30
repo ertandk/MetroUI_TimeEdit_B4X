@@ -9,7 +9,7 @@ Module2=|relative|..\MetroUI_TimeEdit
 NumberOfFiles=1
 NumberOfLibraries=2
 NumberOfModules=2
-Version=7.2
+Version=7.8
 @EndOfDesignText@
 'Code module
 #Region  Project Attributes 
@@ -23,7 +23,7 @@ Version=7.2
 	#MinVersion: 8
 	
 	 #CertificateFile: ios_distribution.cer
-    #ProvisionFile: provision.mobileprovision
+    #ProvisionFile: provisionnew.mobileprovision
 #End Region
 
 Sub Process_Globals
